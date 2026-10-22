@@ -11,9 +11,9 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 - Metro opened 17 Oct 1919, Sol to Cuatro Caminos, 13 lines today: https://en.wikipedia.org/wiki/Madrid_Metro
 - Templo de Debod, early 2nd century BC, gift from Egypt 1968 for help saving Abu Simbel: https://en.wikipedia.org/wiki/Temple_of_Debod
 - Population 3,497,277 on 1 Jan 2026: https://www.eldiario.es/madrid/somos/madrid-pierde-poblacion-nacimientos-superan-muertes-saldo-migratorio-negativo-pleno-debate-regularizacion_1_13185359.html
-- "Gatos", LEGEND, no documentary proof: https://www.thelocal.es/20220215/gatos-why-are-people-from-madrid-referred-to-as-cats-in-spain
-- Mortadelo y Filemón, Francisco Ibáñez, 1958 in Pulgarcito: https://en.wikipedia.org/wiki/Mortadelo_y_Filem%C3%B3n
-- Tebeo from the magazine TBO (1917): https://en.wikipedia.org/wiki/TBO
+- "Gatos" (now told on page 3), LEGEND, no documentary proof: https://www.thelocal.es/20220215/gatos-why-are-people-from-madrid-referred-to-as-cats-in-spain
+- Prado opened 19 November 1819: https://en.wikipedia.org/wiki/Prado_Museum
+- Real Madrid, 15 European Cups (last 2024; PSG won 2025 and 2026): https://en.wikipedia.org/wiki/2026_UEFA_Champions_League_final
 
 ## Pages 3-4: history
 
@@ -27,8 +27,7 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 
 ## Page 6: Prado
 
-- Hours, free hours (Mon-Sat 18-20, Sun 17-19): https://www.museodelprado.es/en/visit/opening-times-and-prices
-- Free for under 18 and students up to 25: https://entradas.museodelprado.es/ (CHECK: always free, or only in free hours?)
+- Free at any time for under 18s and students up to 25 with ID (secondary sources agree, Prado site blocked our checker; CHECK on museodelprado.es): https://www.timeout.es/madrid/es/museos-e-instituciones/museo-del-prado-gratis
 - Metro Banco de España L2, Estación del Arte L1: https://www.museodelprado.es/en/visit/getting-here
 - Las Meninas, room 012: https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f
 - Garden of Earthly Delights, room 056A, score on the buttocks: https://en.wikipedia.org/wiki/The_Garden_of_Earthly_Delights
@@ -45,7 +44,8 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 - Gran Vía, Metrópolis building: https://www.esmadrid.com/en/tourist-information/la-gran-via
 - Retiro and the Fallen Angel (Bellver, 1885): https://en.wikipedia.org/wiki/Fuente_del_%C3%81ngel_Ca%C3%ADdo
 - El Rastro, Sundays 9:00-15:00: https://www.esmadrid.com/en/shopping/el-rastro
-- Bernabéu tour: https://www.realmadrid.com/es-ES/noticias/club/actualidad/reabre-el-tour-bernabeu
+- Bernabéu tour, general public from €37 online, €40 at the ticket office (checked 22 Oct 2026): https://www.realmadrid.com/es-ES/tour-bernabeu
+- Plaza Mayor Christmas market: runs late November to 31 December, 2026 dates not announced, so the brochure only says "every Christmas": https://www.articulo14.es/espana-por-la-igualdad/comunidad-de-madrid/mercado-de-navidad-en-la-plaza-mayor-de-madrid-fechas-y-horarios-20241127.html
 
 ## Page 9: food
 
@@ -53,12 +53,14 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 - Cocido in three rounds: https://www.theculturetrip.com/europe/spain/articles/cocido-madrileno-the-stew-that-has-sustained-madrid-for-six-hundred-years
 - Markets: https://doeatbetterexperience.com/es/blog/mercado-san-miguel-y-mas-alla-mercados-madrid/
 - Meal times: https://www.hosteltur.com/madrid-responde/en/times-lunch-dinner-madrid
-- San Ginés, 1894 (hours CHECK): https://www.timeout.es/madrid/es/bares-y-pubs/chocolateria-san-gines
+- San Ginés, 1894; open late, 24h Thu-Sun per Time Out (sources disagree, hence "open all day and very late"): https://www.timeout.es/madrid/es/bares-y-pubs/chocolateria-san-gines
 - La Violeta, 1915: https://www.esmadrid.com/node/70203
 
 ## Page 10: Toledo
 
-- UNESCO 1986, three cultures, swords since about 500 BC, mazapán PGI: https://en.wikipedia.org/wiki/Toledo,_Spain
+- UNESCO 1986, three cultures: https://en.wikipedia.org/wiki/Toledo,_Spain
+- Toledo steel, a sword-making centre since Roman times: https://en.wikipedia.org/wiki/Toledo_steel
+- Mazapán de Toledo is a PGI, production area the province of Toledo: https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/mazapan_toledo_2008_07_26_tcm30-210752.pdf
 - Avant from Atocha about 33 min: https://www.renfe.com/es/en/inspirate/rutas/madrid-toledo
 - Burial of the Count of Orgaz, son Jorge Manuel, 1578 on the handkerchief: https://en.wikipedia.org/wiki/The_Burial_of_the_Count_of_Orgaz
 - Santa María la Blanca: https://en.wikipedia.org/wiki/Synagogue_of_Santa_Mar%C3%ADa_la_Blanca
@@ -75,17 +77,12 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 
 ## Not sourced, general knowledge
 
-Sol clock at New Year, Plaza Mayor's past (bullfights, Inquisition) and Christmas market, Palacio Real 3,000+ rooms, tortilla "poco hecha", café con leche and cortado, the Spanish phrases.
+Sol clock at New Year, Plaza Mayor's past (bullfights, Inquisition), Palacio Real 3,000+ rooms, tortilla "poco hecha", café con leche and cortado, the Spanish phrases.
 
-## Art sources (comic-filtered by tools/comic.py)
+## Art and photo sources
 
-- cover: File:Escultura del Oso y el Madroño, Puerta del Sol, Madrid, España, Spain.jpg, CC BY-SA 4.0, Carlos Teixidor Cadenas: https://commons.wikimedia.org/wiki/File:Escultura_del_Oso_y_el_Madro%C3%B1o,_Puerta_del_Sol,_Madrid,_Espa%C3%B1a,_Spain.jpg
-- panel1: File:Muralla musulmana - Catedral de Santa María la Real de la Almudena - Madrid.jpg, CC BY-SA 3.0, Carlos Delgado: https://commons.wikimedia.org/wiki/File:Muralla_musulmana_-_Catedral_de_Santa_Mar%C3%ADa_la_Real_de_la_Almudena_-_Madrid.jpg
-- panel2: File:Alfonso VI de León y Castilla 01.jpg, CC BY-SA 2.0, Luis García from Madrid (Spain): https://commons.wikimedia.org/wiki/File:Alfonso_VI_de_Le%C3%B3n_y_Castilla_01.jpg
-- panel3: File:Monumento a Felipe III (Madrid) 03.jpg, CC BY-SA 2.0, Lars Plougmann from United States: https://commons.wikimedia.org/wiki/File:Monumento_a_Felipe_III_(Madrid)_03.jpg
-- panel4: File:Monumento a Miguel de Cervantes - 03.jpg, CC BY-SA 3.0, Carlos Delgado: https://commons.wikimedia.org/wiki/File:Monumento_a_Miguel_de_Cervantes_-_03.jpg
-- panel5: File:Madrid - Malasaña, Plaza del Dos de Mayo, Monumento a Daoiz y Velarde 2.jpg, CC0, Zarateman: https://commons.wikimedia.org/wiki/File:Madrid_-_Malasa%C3%B1a,_Plaza_del_Dos_de_Mayo,_Monumento_a_Daoiz_y_Velarde_2.jpg
-- panel6: File:Telefónica - Gran Vía 28 - Madrid.jpg, CC BY 2.0, Manuel M. Vicente from Spain: https://commons.wikimedia.org/wiki/File:Telef%C3%B3nica_-_Gran_V%C3%ADa_28_-_Madrid.jpg
+- cover (comic-filtered by tools/comic.py, lettering in the bubble by Nick): File:Escultura del Oso y el Madroño, Puerta del Sol, Madrid, España, Spain.jpg, CC BY-SA 4.0, Carlos Teixidor Cadenas: https://commons.wikimedia.org/wiki/File:Escultura_del_Oso_y_el_Madro%C3%B1o,_Puerta_del_Sol,_Madrid,_Espa%C3%B1a,_Spain.jpg
+- every other photo and painting: tools/photos.json (file, author, licence, Commons page), downloaded and cropped by tools/photos.py; credited under each photo in the brochure
 - map: drawn by tools/map.py from OpenStreetMap data, © OpenStreetMap contributors (ODbL)
 
 ## Spot-it captions on pages 3-4

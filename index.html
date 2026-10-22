@@ -6,7 +6,7 @@
 <title>¡Madrid! A comic guide for IB2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Patrick+Hand&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet">
 <style>
   /* Palette taken from Madrid itself */
   :root {
@@ -27,8 +27,8 @@
   body {
     margin: 0;
     background: #8a8a8a;
-    font-family: "Patrick Hand", "Comic Sans MS", cursive;
-    font-size: 13pt;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 11.5pt;
     line-height: 1.25;
     color: var(--ink);
   }
@@ -92,9 +92,24 @@
   }
 
   /* Ben-Day dots, the one loud thing */
-  .dots-sol    { background: radial-gradient(circle, var(--sol) 34%, transparent 36%) 0 0 / 2mm 2mm, #fff; }
-  .dots-red    { background: radial-gradient(circle, #f4a3a8 34%, transparent 36%) 0 0 / 2mm 2mm, #fff; }
-  .dots-blue   { background: radial-gradient(circle, #a9c4ea 34%, transparent 36%) 0 0 / 2mm 2mm, #fff; }
+  /* only on a panel's title strip: body text always sits on plain white */
+  .dots-sol  { --dot: var(--sol); }
+  .dots-red  { --dot: #f4a3a8; }
+  .dots-blue { --dot: #a9c4ea; }
+  /* every stat tile gets a number strip, dotted or plain, so the text lines up */
+  .stat b {
+    margin: -2.5mm -3mm 1.5mm;
+    padding: 1.6mm 3mm 1.2mm;
+    border-bottom: 0.5mm solid var(--ink);
+  }
+  .stat { font-size: 13pt; }
+  [class*="dots-"] > h3:first-child,
+  [class*="dots-"].stat b {
+    background: radial-gradient(circle, var(--dot) 34%, transparent 36%) 0 0 / 2mm 2mm, #fff;
+    margin: -2.5mm -3mm 1.5mm;
+    padding: 1.6mm 3mm 1.2mm;
+    border-bottom: 0.5mm solid var(--ink);
+  }
 
   /* Yellow caption box, as in a tebeo */
   .caption {
@@ -102,7 +117,8 @@
     background: var(--sol);
     border: 0.5mm solid var(--ink);
     padding: 0.6mm 2mm;
-    font-size: 10.5pt;
+    font-size: 10pt;
+    font-weight: 700;
     margin-bottom: 1.5mm;
   }
 
@@ -153,11 +169,39 @@
   .art:has(img) { padding: 0; border: var(--line) solid var(--ink); background: none; }
   .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+  /* Real photos: thick ink frame, slight tilt, credit underneath */
+  .photo { margin: 0; }
+  .photo img {
+    display: block;
+    width: 100%;
+    border: var(--line) solid var(--ink);
+    box-shadow: 1mm 1mm 0 var(--ink);
+    transform: rotate(-1deg);
+  }
+  .photo.tilt-r img { transform: rotate(1deg); }
+  .credit { font-size: 6pt; line-height: 1.15; margin-top: 1.4mm; color: #333; }
+
+  /* Card with a photo on the left */
+  .card { display: grid; grid-template-columns: 34mm 1fr; gap: 3.5mm; align-items: start; }
+  .card .photo img { height: 30mm; object-fit: cover; }
+  .hero img { height: 37mm; object-fit: cover; }
+  .toledo h3 { font-size: 12pt; }
+  .toledo .small { font-size: 10.5pt; }
+  .prado { gap: 2.2mm; }
+  .prado .panel { padding: 2mm 3mm; }
+  .prado h3 { font-size: 11pt; }
+  .prado .card { grid-template-columns: 24mm 1fr; }
+  .prado .card .photo img { height: 20mm; }
+  .prado .card p { margin: 0; }
+  .prado .room { display: block; font-family: "Comic Neue", sans-serif; font-weight: 700; font-size: 9.5pt; margin-top: 0.6mm; }
+
   .strip { display: grid; grid-template-columns: 48mm 1fr; gap: 3mm; align-items: start; }
-  .strip .art { height: 48mm; }
-  .strip .small { font-size: 13pt; }
+  .strip .photo img { height: 48mm; object-fit: cover; }
+  .strip .small { font-size: 10.5pt; }
 
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+  .fill { flex: 1; grid-auto-rows: 1fr; }
+  .stat b { font-size: 20pt; }
   .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; }
 
   .metro {
@@ -166,11 +210,13 @@
     color: #fff;
     border-radius: 1.2mm;
     padding: 0 1.4mm;
-    font-family: "Patrick Hand", sans-serif;
-    font-size: 10.5pt;
+    font-family: "Comic Neue", sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    vertical-align: 0.4mm;
   }
 
-  .small { font-size: 11.5pt; }
+  .small { font-size: 10.5pt; }
   .skip { color: var(--crimson); }
 
   h3 { font-size: 12.5pt; margin-bottom: 1mm; }
@@ -186,16 +232,33 @@
     transform: rotate(-3deg);
     margin-top: 2mm;
   }
-  .cover { justify-content: space-evenly; }
-  .cover .art { flex: none; aspect-ratio: 134 / 110; transform: rotate(-1.5deg); box-shadow: 1.6mm 1.6mm 0 var(--ink); }
+  .cover { justify-content: space-between; padding-top: 10mm; padding-bottom: 12mm; }
+  .cover .art { flex: none; aspect-ratio: 134 / 132; transform: rotate(-1.5deg); box-shadow: 1.6mm 1.6mm 0 var(--ink); position: relative; overflow: visible; }
+  .cover .art img { aspect-ratio: 134 / 132; }
+  /* issue box, as in the corner of a tebeo cover */
+  .issue {
+    position: absolute;
+    top: -4mm;
+    right: -3mm;
+    background: var(--sol);
+    border: 0.6mm solid var(--ink);
+    box-shadow: 0.8mm 0.8mm 0 var(--ink);
+    padding: 1.2mm 2.4mm 1mm;
+    font-family: "Bowlby One", sans-serif;
+    font-size: 10pt;
+    line-height: 1.05;
+    text-align: center;
+    transform: rotate(4deg);
+  }
+  .issue small { display: block; font-size: 7.5pt; }
   .cover .tagline { background: var(--sol); font-size: 15pt; }
 
   /* Pages with less text: bigger type, panels spread to fill */
   .roomy { justify-content: space-between; }
-  .roomy .small { font-size: 13pt; }
+  .roomy .small { font-size: 11.5pt; }
   .roomy h3 { font-size: 14pt; }
   .roomy .checks { font-size: 15pt; }
-  .roomy .checks li { margin-bottom: 4.5mm; }
+  .roomy .checks li { margin-bottom: 7mm; }
 
   /* ---------- Checklist ---------- */
   .checks { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 4mm; }
@@ -224,49 +287,48 @@
 <!-- PAGE 1: COVER -->
 <section class="page cover">
   <h1 class="masthead">¡Madrid!</h1>
-  <div class="art"><img src="art/cover-ink.png" alt="The bear and the strawberry tree statue in Puerta del Sol"></div>
-  <div class="panel tagline">A comic survival guide to Madrid and Toledo, made for IB2.</div>
+  <div class="art">
+    <img src="art/cover-ink.png" alt="The bear and the strawberry tree statue in Puerta del Sol">
+    <div class="issue">Nº 1<small>26-29 NOV 2026</small></div>
+  </div>
+  <div class="panel tagline">A comic survival guide to Madrid and Toledo.</div>
 </section>
 
-<!-- PAGE 2: NUMBERS AND FACTS -->
+<!-- PAGE 2: NUMBERS -->
 <section class="page left">
-  <h2 class="title">Madrid in numbers</h2>
-  <div class="grid2">
-    <div class="panel dots-sol stat"><b>650 m</b>above sea level, about. That makes it the highest capital in the EU. Bring a jacket.</div>
+  <h2 class="title">Madrid by the numbers</h2>
+  <div class="grid2 fill">
+    <div class="panel dots-sol stat"><b>650 m</b>above sea level, the highest capital in the EU.</div>
     <div class="panel stat"><b>Km 0</b>Every road distance in Spain is measured from a plaque on the pavement in Puerta del Sol.</div>
     <div class="panel stat"><b>1725</b>Sobrino de Botín opened. Guinness lists it as the oldest restaurant in the world.</div>
     <div class="panel dots-blue stat"><b>1919</b>The first metro line opened, Sol to Cuatro Caminos. Today there are 13.</div>
     <div class="panel dots-red stat"><b>2,200</b>years old: the Templo de Debod, a real Egyptian temple Egypt gave Spain in 1968.</div>
-    <div class="panel stat"><b>3.5 M</b>people live in the city. They call themselves madrileños.</div>
-  </div>
-  <div class="bubble">
-    <p><b>Why "gatos"?</b> People born in Madrid are nicknamed cats. The legend says that in 1085 a soldier climbed the city wall with his bare hands like a cat, and the name stuck to his family, then to everyone.</p>
-  </div>
-  <div class="panel small">
-    <p><b>Why a comic?</b> In Spain a comic is a <i>tebeo</i>, after the magazine <i>TBO</i> (1917). The most famous one, <i>Mortadelo y Filemón</i> by Francisco Ibáñez (1958), is still sold at every kiosk in Madrid.</p>
+    <div class="panel stat"><b>3.5 M</b>people live in the city, and they call themselves madrileños.</div>
+    <div class="panel stat"><b>1819</b>The Prado opened its doors on 19 November. Page 6 has five paintings to hunt there.</div>
+    <div class="panel dots-sol stat"><b>15</b>European Cups won by Real Madrid, more than any other club.</div>
   </div>
   <span class="folio">2</span>
 </section>
 
-<!-- PAGES 3-4: HISTORY STRIP -->
+<!-- PAGES 3-4: HISTORY -->
 <section class="page">
-  <h2 class="title">1,100 years in 6 panels</h2>
+  <h2 class="title">1,100 years of Madrid</h2>
   <div class="panel strip">
-    <div class="art"><img src="art/panel1-ink.png" alt="The Almudena cathedral above the Moorish wall"></div>
+    <figure class="photo"><img src="art/photos/panel1.jpg" alt="The Almudena cathedral above the Moorish wall"><figcaption class="credit">Photo: Carlos Delgado, CC BY-SA 3.0</figcaption></figure>
     <div>
     <span class="caption">Late 800s</span>
     <p class="small">Emir Muhammad I of Córdoba builds a fortress on a hill over the Manzanares river. He calls it <b>Mayrit</b>, probably from the Arabic for "water channel". <b>Spot it:</b> what is left of the wall, below the Almudena cathedral.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art"><img src="art/panel2-ink.png" alt="Statue of Alfonso VI"></div>
+    <figure class="photo tilt-r"><img src="art/photos/panel2.jpg" alt="Statue of Alfonso VI"><figcaption class="credit">Photo: Luis García, CC BY-SA 2.0</figcaption></figure>
     <div>
     <span class="caption">1085</span>
-    <p class="small">King Alfonso VI of Castile takes Mayrit. Legend says one soldier climbed the wall by hand, and that is why madrileños are still called <i>gatos</i>. <b>Spot it:</b> his statue in the Sabatini Gardens.</p>
+    <p class="small">King Alfonso VI of Castile takes Mayrit. Legend says a soldier climbed the wall with his bare hands like a cat. The nickname stuck to his family, then to the whole city: madrileños are still called <i>gatos</i>. <b>Spot it:</b> his statue in the Sabatini Gardens.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art"><img src="art/panel3.png" alt="Philip III on horseback in Plaza Mayor"></div>
+    <figure class="photo"><img src="art/photos/panel3.jpg" alt="Philip III on horseback in Plaza Mayor"><figcaption class="credit">Photo: Lars Plougmann, CC BY-SA 2.0</figcaption></figure>
     <div>
     <span class="caption">1561</span>
     <p class="small">King Philip II moves the royal court to Madrid, then a small town. It has been the capital ever since (apart from 1601 to 1606). <b>Spot it:</b> his son Philip III on horseback in Plaza Mayor.</p>
@@ -276,23 +338,23 @@
 </section>
 
 <section class="page left">
-  <h2 class="title">…and still going</h2>
+  <h2 class="title">1,100 years, part 2</h2>
   <div class="panel strip">
-    <div class="art"><img src="art/panel4.png" alt="The Cervantes monument in Plaza de España"></div>
+    <figure class="photo tilt-r"><img src="art/photos/panel4.jpg" alt="The Cervantes monument in Plaza de España"><figcaption class="credit">Photo: Carlos Delgado, CC BY-SA 3.0</figcaption></figure>
     <div>
     <span class="caption">1600s, the Golden Age</span>
     <p class="small">Cervantes, Lope de Vega and Quevedo live a few streets apart, in what is now the Barrio de las Letras. <b>Spot it:</b> Cervantes and Don Quixote in Plaza de España.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art"><img src="art/panel5.png" alt="Daoíz and Velarde monument"></div>
+    <figure class="photo"><img src="art/photos/panel5.jpg" alt="Daoíz and Velarde monument"><figcaption class="credit">Photo: Zarateman, CC0</figcaption></figure>
     <div>
     <span class="caption">2 May 1808</span>
     <p class="small">Madrid rises against Napoleon's army. Goya paints it, and the executions the next day (Prado, page 6). <b>Spot it:</b> Daoíz and Velarde, two officers who died defending their barracks, in Plaza del Dos de Mayo.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art"><img src="art/panel6.png" alt="The Telefónica building on Gran Vía"></div>
+    <figure class="photo tilt-r"><img src="art/photos/panel6.jpg" alt="The Telefónica building on Gran Vía"><figcaption class="credit">Photo: Manuel M. Vicente, CC BY 2.0</figcaption></figure>
     <div>
     <span class="caption">1936 to the 1980s</span>
     <p class="small">The city survives a siege through the Civil War. After Franco dies in 1975 comes <b>La Movida</b>: punk, art and Almodóvar films. <b>Spot it:</b> the Telefónica tower on Gran Vía, shelled during the siege.</p>
@@ -304,7 +366,7 @@
 <!-- PAGE 5: MAP -->
 <section class="page">
   <h2 class="title">Where everything is</h2>
-  <div class="art" style="height: 128mm"><img src="art/map-notes.png" alt="Map of central Madrid with the eight spots numbered"></div>
+  <div class="art" style="height: 142mm"><img src="art/map.png" alt="Map of central Madrid with the eight spots numbered"></div>
   <div class="panel small grid2">
     <div>
       <p>1 Puerta del Sol and Km 0</p>
@@ -323,84 +385,93 @@
 </section>
 
 <!-- PAGE 6: PRADO -->
-<section class="page left">
+<section class="page left prado">
   <h2 class="title">Prado hunt</h2>
-  <div class="bubble small">
-    <p>The Prado has over 1,000 paintings on show. You won't see them all, so hunt these five. Tick each one on page 12.</p>
+  <p class="small">Over 1,000 paintings, five to hunt. Tick them on page 12.</p>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/meninas.jpg" alt="Las Meninas"></figure>
+    <div><h3>1. Las Meninas, Velázquez <span class="room">Room 12</span></h3>
+    <p class="small">Look for the painter himself, brush in hand, and the king and queen reflected in the mirror at the back.</p></div>
   </div>
-  <div class="panel dots-sol">
-    <h3>1. <a href="https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f">Las Meninas</a>, Velázquez <span class="small">(Room 12)</span></h3>
-    <p class="small">Look for the painter himself, brush in hand, and the king and queen reflected in the mirror at the back.</p>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/bosch.jpg" alt="The Garden of Earthly Delights, right panel"></figure>
+    <div><h3>2. The Garden of Earthly Delights, Bosch <span class="room">Room 56A</span></h3>
+    <p class="small">Find the music score painted on a man's bottom. A choir behind him is singing from it.</p></div>
   </div>
-  <div class="panel">
-    <h3>2. The Garden of Earthly Delights, Bosch <span class="small">(Room 56A)</span></h3>
-    <p class="small">Find the music score painted on a man's bottom. A choir behind him is singing from it.</p>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/goya3may.jpg" alt="The Third of May 1808"></figure>
+    <div><h3>3. The Third of May 1808, Goya <span class="room">Room 64</span></h3>
+    <p class="small">The executions from page 4. The man in white has marks on his hands like Christ's.</p></div>
   </div>
-  <div class="panel">
-    <h3>3. The Third of May 1808, Goya <span class="small">(Room 64)</span></h3>
-    <p class="small">The executions from page 4. The man in white has marks on his hands like Christ's.</p>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/saturn.jpg" alt="Saturn Devouring His Son"></figure>
+    <div><h3>4. Saturn Devouring His Son, Goya <span class="room">Room 67</span></h3>
+    <p class="small">One of the Black Paintings Goya painted on the walls of his own house. They were cut off and moved here.</p></div>
   </div>
-  <div class="panel dots-red">
-    <h3>4. Saturn Devouring His Son, Goya <span class="small">(Room 67)</span></h3>
-    <p class="small">One of the Black Paintings Goya painted on the walls of his own house. They were cut off and moved here.</p>
-  </div>
-  <div class="panel">
-    <h3>5. The Nobleman with his Hand on his Chest, El Greco <span class="small">(Room 8B)</span></h3>
-    <p class="small">Remember his face: El Greco lived in Toledo, and you'll meet him again on page 10.</p>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/greco.jpg" alt="The Nobleman with his Hand on his Chest"></figure>
+    <div><h3>5. The Nobleman with his Hand on his Chest, El Greco <span class="room">Room 8B</span></h3>
+    <p class="small">Remember his face: El Greco lived in Toledo, and you'll meet him again on page 10.</p></div>
   </div>
   <div class="panel small">
-    <p><b>Free entry:</b> Monday to Saturday 18:00 to 20:00, Sunday 17:00 to 19:00. Under 18s and students up to 25 get in free with ID, so bring your student card. Rooms change when paintings move: check the floor plan at the door. <span class="metro">Banco de España L2</span> <span class="metro">Estación del Arte L1</span></p>
+    <p><b>Free for you:</b> under 18s and students up to 25 get in any time with ID, so bring your student card. Rooms change when paintings move, so check the floor plan at the door.</p>
+    <p><span class="metro">Banco de España L2</span> <span class="metro">Estación del Arte L1</span></p>
   </div>
+  <p class="credit">Paintings: Museo del Prado, public domain.</p>
   <span class="folio">6</span>
 </section>
 
 <!-- PAGES 7-8: SIGHTSEEING -->
 <section class="page roomy">
   <h2 class="title">Go see</h2>
-  <div class="panel">
-    <h3>1. <a href="https://www.google.com/maps/search/?api=1&query=Puerta+del+Sol+Madrid">Puerta del Sol</a> <span class="metro">Sol L1 L2 L3</span></h3>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/sol.jpg" alt="Puerta del Sol"><figcaption class="credit">Photo: Viennevi, CC BY-SA 3.0</figcaption></figure>
+    <div><h3>1. <a href="https://www.google.com/maps/search/?api=1&query=Puerta+del+Sol+Madrid">Puerta del Sol</a> <span class="metro">Sol L1 L2 L3</span></h3>
     <p class="small">Stand on Km 0, find the bear and the strawberry tree statue, the city's symbol, and the clock that Spain watches at midnight on New Year's Eve.</p>
-    <p class="small skip">Skip if: crowds bother you. It's the busiest square in Spain.</p>
+    <p class="small skip">Skip if: crowds bother you. It's the busiest square in Spain.</p></div>
   </div>
-  <div class="panel">
-    <h3>2. <a href="https://www.google.com/maps/search/?api=1&query=Plaza+Mayor+Madrid">Plaza Mayor</a> <span class="metro">Sol</span></h3>
-    <p class="small">A 17th-century square that once held bullfights and trials of the Inquisition. Now it holds the Christmas market, which should be open while we're there.</p>
-    <p class="small skip">Skip if: you're hungry. The terraces here are tourist prices.</p>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/mayor.jpg" alt="Plaza Mayor"><figcaption class="credit">Photo: Diego Delso, CC BY-SA 4.0</figcaption></figure>
+    <div><h3>2. <a href="https://www.google.com/maps/search/?api=1&query=Plaza+Mayor+Madrid">Plaza Mayor</a> <span class="metro">Sol</span></h3>
+    <p class="small">A 17th-century square that once held bullfights and trials of the Inquisition. Every Christmas it fills with market stalls.</p>
+    <p class="small skip">Skip if: you're hungry. The terraces here are tourist prices.</p></div>
   </div>
-  <div class="panel">
-    <h3>3. <a href="https://www.google.com/maps/search/?api=1&query=Palacio+Real+de+Madrid">Palacio Real</a> <span class="metro">Ópera L2 L5</span></h3>
-    <p class="small">Over 3,000 rooms, the biggest royal palace in Western Europe. The king doesn't live here, he just uses it for ceremonies. EU citizens get in free on Thursday 26 November, 16:00 to 18:00.</p>
-    <p class="small skip">Skip if: you only want the outside. The square in front is free.</p>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/palacio.jpg" alt="Palacio Real"><figcaption class="credit">Photo: Javier Perez Montes, CC BY-SA 4.0</figcaption></figure>
+    <div><h3>3. <a href="https://www.google.com/maps/search/?api=1&query=Palacio+Real+de+Madrid">Palacio Real</a> <span class="metro">Ópera L2 L5</span></h3>
+    <p class="small">Over 3,000 rooms, the biggest royal palace in Western Europe. The king only uses it for ceremonies. EU citizens get in free on Thursday 26 November, 16:00 to 18:00.</p></div>
   </div>
-  <div class="panel dots-sol">
-    <h3>4. <a href="https://www.google.com/maps/search/?api=1&query=Templo+de+Debod+Madrid">Templo de Debod</a> <span class="metro">Ventura Rodríguez L3</span></h3>
-    <p class="small">An Egyptian temple in a park. Go at sunset, about 17:50: it's the best free view in Madrid. Closed inside on Mondays.</p>
-    <p class="small skip">Skip if: you're going in daylight. It's the sunset that makes it.</p>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/debod.jpg" alt="Templo de Debod at sunset"><figcaption class="credit">Photo: Adrian Diez, CC BY-SA 3.0</figcaption></figure>
+    <div><h3>4. <a href="https://www.google.com/maps/search/?api=1&query=Templo+de+Debod+Madrid">Templo de Debod</a> <span class="metro">Ventura Rodríguez L3</span></h3>
+    <p class="small">An Egyptian temple in a park. Go at sunset, around 17:50: it's the best free view in Madrid. Closed inside on Mondays.</p>
+    <p class="small skip">Skip if: you're going in daylight. It's the sunset that makes it.</p></div>
   </div>
   <span class="folio">7</span>
 </section>
 
 <section class="page roomy left">
   <h2 class="title">Go see, part 2</h2>
-  <div class="panel">
-    <h3>5. <a href="https://www.google.com/maps/search/?api=1&query=Gran+Via+Madrid">Gran Vía</a> <span class="metro">Gran Vía L1 L5</span></h3>
-    <p class="small">Madrid's Broadway: theatres, shops and early 1900s buildings. Look up at the Metrópolis building's dome.</p>
-    <p class="small skip">Skip if: you hate shopping crowds on a Saturday.</p>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/granvia.jpg" alt="The Metrópolis building on Gran Vía"><figcaption class="credit">Photo: Diego Delso, CC BY-SA 4.0</figcaption></figure>
+    <div><h3>5. <a href="https://www.google.com/maps/search/?api=1&query=Gran+Via+Madrid">Gran Vía</a> <span class="metro">Gran Vía L1 L5</span></h3>
+    <p class="small">Madrid's main street: theatres, shops and early-1900s buildings. Look up at the Metrópolis dome.</p></div>
   </div>
-  <div class="panel">
-    <h3>6. <a href="https://www.google.com/maps/search/?api=1&query=Parque+del+Retiro+Madrid">El Retiro</a> <span class="metro">Retiro L2</span></h3>
-    <p class="small">Rowing boats on the lake, the glass Palacio de Cristal, and the Fallen Angel, one of the few statues of the devil in any city.</p>
-    <p class="small skip">Skip if: it's raining. It's all outdoors.</p>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/retiro.jpg" alt="Palacio de Cristal in the Retiro"><figcaption class="credit">Photo: Diego Delso, CC BY-SA 4.0</figcaption></figure>
+    <div><h3>6. <a href="https://www.google.com/maps/search/?api=1&query=Parque+del+Retiro+Madrid">El Retiro</a> <span class="metro">Retiro L2</span></h3>
+    <p class="small">Rowing boats on the lake, the glass Palacio de Cristal, and the Fallen Angel, one of the few statues of the devil in any city.</p></div>
   </div>
-  <div class="panel dots-blue">
-    <h3>7. <a href="https://www.google.com/maps/search/?api=1&query=El+Rastro+Madrid">El Rastro</a> <span class="metro">La Latina L5</span></h3>
+  <div class="panel card">
+    <figure class="photo"><img src="art/photos/rastro.jpg" alt="El Rastro"><figcaption class="credit">Photo: Pablo Alberto Salguero Quiles, CC BY-SA 3.0</figcaption></figure>
+    <div><h3>7. <a href="https://www.google.com/maps/search/?api=1&query=El+Rastro+Madrid">El Rastro</a> <span class="metro">La Latina L5</span></h3>
     <p class="small">A huge street flea market, Sunday mornings only, and we are there on Sunday 29 November. Vintage clothes, vinyl, old comics.</p>
-    <p class="small skip">Skip if: you'd rather sleep in. It runs 09:00 to 15:00.</p>
+    <p class="small skip">Skip if: you'd rather sleep in. It runs 09:00 to 15:00.</p></div>
   </div>
-  <div class="panel">
-    <h3>8. <a href="https://www.google.com/maps/search/?api=1&query=Estadio+Santiago+Bernabeu">Santiago Bernabéu</a> <span class="metro">Santiago Bernabéu L10</span></h3>
-    <p class="small">Real Madrid's stadium, rebuilt with a retractable roof. The tour takes you to the dressing room and the pitch side.</p>
-    <p class="small skip">Skip if: you're not into football. The tour isn't cheap.</p>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/bernabeu.jpg" alt="Santiago Bernabéu stadium"><figcaption class="credit">Photo: MottaW, CC BY 4.0</figcaption></figure>
+    <div><h3>8. <a href="https://www.google.com/maps/search/?api=1&query=Estadio+Santiago+Bernabeu">Santiago Bernabéu</a> <span class="metro">Santiago Bernabéu L10</span></h3>
+    <p class="small">Real Madrid's stadium, rebuilt with a retractable roof. The tour takes you to the dressing room and the pitch side. Tickets from €37 online, €40 at the door.</p></div>
   </div>
   <span class="folio">8</span>
 </section>
@@ -447,9 +518,10 @@
 </section>
 
 <!-- PAGE 10: TOLEDO -->
-<section class="page roomy left">
+<section class="page left toledo">
   <h2 class="title">Day trip: Toledo</h2>
-  <div class="bubble small">
+  <figure class="photo hero"><img src="art/photos/toledo.jpg" alt="Toledo seen from the Mirador del Valle"><figcaption class="credit">Photo: Esperanza Candel, CC BY-SA 3.0 ES</figcaption></figure>
+  <div class="panel small">
     <p>Spain's capital before Madrid, on a hill wrapped by the Tagus river. Christians, Muslims and Jews lived here side by side, so it's called the <b>city of three cultures</b>. The whole old town is a UNESCO World Heritage Site (1986). The Avant train from Atocha takes about 33 minutes.</p>
   </div>
   <div class="grid2">
@@ -467,17 +539,15 @@
     </div>
     <div class="panel">
       <h3><a href="https://www.google.com/maps/search/?api=1&query=Mirador+del+Valle+Toledo">Mirador del Valle</a></h3>
-      <p class="small">The postcard view of the whole city from across the river.</p>
+      <p class="small">The view in the photo above, in person, from across the river.</p>
     </div>
-  </div>
-  <div class="grid2">
     <div class="panel dots-red">
       <h3>Mazapán</h3>
-      <p class="small">Toledo's marzipan is protected by law, like champagne: only Toledo's can use the name. Buy a box in the old town.</p>
+      <p class="small">"Mazapán de Toledo" is a protected name, like champagne: only marzipan made in Toledo province can use it. Buy a box in the old town.</p>
     </div>
     <div class="panel">
       <h3>Swords</h3>
-      <p class="small">Toledo has made swords since about 500 BC. Shops still sell swords. You can't fly home with one.</p>
+      <p class="small">Toledo steel has been famous since Roman times. Shops still sell swords. You can't fly home with one.</p>
     </div>
   </div>
   <span class="folio">10</span>
@@ -493,12 +563,12 @@
         <p><b>Hola, buenas</b> hi (to anyone)</p>
         <p><b>¿Me pones…?</b> can I get…?</p>
         <p><b>La cuenta, por favor</b> the bill</p>
-        <p><b>¿Dónde está el metro?</b></p>
+        <p><b>¿Dónde está el metro?</b> where's the metro?</p>
         <p><b>¿Cuánto cuesta?</b> how much?</p>
       </div>
       <div>
         <p><b>Para llevar</b> to take away</p>
-        <p><b>Sin gluten / vegetariano</b></p>
+        <p><b>Sin gluten / vegetariano</b> gluten-free / vegetarian</p>
         <p><b>Perdón</b> sorry, excuse me</p>
         <p><b>¡Qué guay!</b> how cool</p>
         <p><b>Vale</b> OK (you'll hear it 100 times)</p>
@@ -549,10 +619,7 @@
     <li>Daoíz and Velarde in Malasaña</li>
     <li>Said "vale" without thinking</li>
   </ul>
-  <div class="panel dots-sol" style="margin-top: auto">
-    <p>Made by Nick for IB2, November 2026. Every fact has a source in this brochure's sources list.</p>
-    <p class="small">Art adapted from photos by Carlos Teixidor Cadenas (cover, CC BY-SA 4.0), Carlos Delgado (page 3, CC BY-SA 3.0), Luis García (page 3, CC BY-SA 2.0), Lars Plougmann (page 3, CC BY-SA 2.0), Carlos Delgado (page 4, CC BY-SA 3.0), Manuel M. Vicente (page 4, CC BY 2.0). Map data © OpenStreetMap contributors.</p>
-  </div>
+  <p class="credit" style="margin-top: auto">Cover art adapted from a photo by Carlos Teixidor Cadenas, CC BY-SA 4.0.</p>
   <span class="folio">12</span>
 </section>
 

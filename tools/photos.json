@@ -1,0 +1,92 @@
+{
+ "meninas": {
+  "title": "Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg",
+  "licence": "Public domain",
+  "artist": "Diego Velázquez"
+ },
+ "bosch": {
+  "title": "Hieronymus Bosch - The Garden of Earthly Delights - Hell.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Hell.jpg",
+  "licence": "Public domain",
+  "artist": "Hieronymus Bosch"
+ },
+ "goya3may": {
+  "title": "El Tres de Mayo, by Francisco de Goya, from Prado in Google Earth.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_in_Google_Earth.jpg",
+  "licence": "Public domain",
+  "artist": "Francisco Goya"
+ },
+ "saturn": {
+  "title": "Francisco de Goya, Saturno devorando a su hijo (1819-1823).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg",
+  "licence": "Public domain",
+  "artist": "Francisco Goya"
+ },
+ "greco": {
+  "title": "The Nobleman with his hand on his chest, by El Greco (Museo del Prado, Madrid).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Nobleman_with_his_hand_on_his_chest,_by_El_Greco_(Museo_del_Prado,_Madrid).jpg",
+  "licence": "Public domain",
+  "artist": "El Greco"
+ },
+ "sol": {
+  "title": "Plaza Puerta del Sol, Casa de Correos.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Plaza_Puerta_del_Sol,_Casa_de_Correos.jpg",
+  "licence": "CC BY-SA 3.0",
+  "artist": "Viennevi"
+ },
+ "mayor": {
+  "title": "Plaza Mayor, Madrid, España, 2023-01-03, DD 78.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_78.jpg",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Diego Delso"
+ },
+ "palacio": {
+  "title": "Fachada Este - Palacio Real - Madrid 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fachada_Este_-_Palacio_Real_-_Madrid_01.jpg",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Javier Perez Montes"
+ },
+ "debod": {
+  "title": "Templo de Debod al atardecer.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Templo_de_Debod_al_atardecer.JPG",
+  "licence": "CC BY-SA 3.0",
+  "artist": "Adrian Diez"
+ },
+ "granvia": {
+  "title": "Edificio Metrópolis, calle de Alcalá, Madrid, España, 2017-05-18, DD 08.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Edificio_Metr%C3%B3polis,_calle_de_Alcal%C3%A1,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_08.jpg",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Diego Delso"
+ },
+ "retiro": {
+  "title": "Palacio de Cristal, Parque del Retiro, Madrid, España, 2017-05-18, DD 21.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Palacio_de_Cristal,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_21.jpg",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Diego Delso"
+ },
+ "rastro": {
+  "title": "Rastro de Madrid (España) 1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rastro_de_Madrid_(Espa%C3%B1a)_1.jpg",
+  "licence": "CC BY-SA 3.0",
+  "artist": ""
+ },
+ "bernabeu": {
+  "title": "M-estadio-santiago-bernabeu-diciembre-2024-a.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:M-estadio-santiago-bernabeu-diciembre-2024-a.jpg",
+  "licence": "CC BY 4.0",
+  "artist": "MottaW"
+ },
+ "toledo": {
+  "title": "Vista de Toledo desde el mirador del Valle 02.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vista_de_Toledo_desde_el_mirador_del_Valle_02.jpg",
+  "licence": "CC BY-SA 3.0 es",
+  "artist": "Esperanza Candel"
+ },
+ "panel6": {
+  "title": "Telefónica - Gran Vía 28 - Madrid.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Telef%C3%B3nica_-_Gran_V%C3%ADa_28_-_Madrid.jpg",
+  "licence": "CC BY 2.0",
+  "artist": "Manuel M. Vicente from Spain"
+ }
+}

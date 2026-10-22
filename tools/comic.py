@@ -1,7 +1,7 @@
 # /// script
 # dependencies = ["pillow", "numpy"]
 # ///
-# Turns reference photos and paintings into tebeo-style art:
+# Turns the cover photo into tebeo-style art:
 # flat colours from the brochure palette, black ink outlines, halftone dots in the shadows.
 # Usage: uv run tools/comic.py SRC_DIR OUT_DIR
 import sys
@@ -27,13 +27,7 @@ PALETTE = [
 
 # slot -> (width mm, height mm, area of the source to use as fractions, line blur)
 SLOTS = {
-    "cover": (134, 110, (0, 0, 1, 1), 2.4),
-    "panel1": (48, 48, (0, 0, 1, 1), 2.2),
-    "panel2": (48, 48, (0, 0.02, 1, 0.62), 2.2),
-    "panel3": (48, 48, (0, 0, 1, 1), 2.2),
-    "panel4": (48, 48, (0, 0, 1, 1), 2.2),
-    "panel5": (48, 48, (0, 0, 1, 0.7), 2.2),
-    "panel6": (48, 48, (0, 0, 1, 1), 2.2),
+    "cover": (134, 132, (0, 0, 1, 1), 2.4),
 }
 
 

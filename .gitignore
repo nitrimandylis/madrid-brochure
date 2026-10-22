@@ -1,3 +1,4 @@
 phone.pdf
 print.pdf
 .DS_Store
+__pycache__/
