@@ -152,6 +152,10 @@
   }
   .art img { width: 100%; height: 100%; object-fit: contain; }
 
+  .strip { display: grid; grid-template-columns: 48mm 1fr; gap: 3mm; align-items: start; }
+  .strip .art { height: 48mm; }
+  .strip .small { font-size: 13pt; }
+
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
   .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; }
 
@@ -245,40 +249,52 @@
 <!-- PAGES 3-4: HISTORY STRIP -->
 <section class="page">
   <h2 class="title">1,100 years in 6 panels</h2>
-  <div class="panel">
+  <div class="panel strip">
+    <div class="art">Panel 1: a Moorish fortress on a hill<br>48 × 48 mm</div>
+    <div>
     <span class="caption">Late 800s</span>
-    <div class="art" style="height: 29mm">Your drawing: panel 1, a Moorish fortress on a hill<br>122 × 29 mm</div>
     <p class="small">Emir Muhammad I of Córdoba builds a fortress on a hill over the Manzanares river. He calls it <b>Mayrit</b>, probably from the Arabic for "water channel".</p>
+    </div>
   </div>
-  <div class="panel">
+  <div class="panel strip">
+    <div class="art">Panel 2: a soldier climbing the wall like a cat<br>48 × 48 mm</div>
+    <div>
     <span class="caption">1085</span>
-    <div class="art" style="height: 29mm">Your drawing: panel 2, a soldier climbing the wall like a cat<br>122 × 29 mm</div>
     <p class="small">King Alfonso VI of Castile takes Mayrit. Legend says one soldier climbed the wall by hand, and that is why madrileños are still called <i>gatos</i>.</p>
+    </div>
   </div>
-  <div class="panel">
+  <div class="panel strip">
+    <div class="art">Panel 3: Philip II arriving with the royal court<br>48 × 48 mm</div>
+    <div>
     <span class="caption">1561</span>
-    <div class="art" style="height: 29mm">Your drawing: panel 3, Philip II arriving with the royal court<br>122 × 29 mm</div>
     <p class="small">King Philip II moves the royal court to Madrid, then a small town. It has been the capital ever since (apart from 1601 to 1606).</p>
+    </div>
   </div>
   <span class="folio">3</span>
 </section>
 
 <section class="page left">
   <h2 class="title">…and still going</h2>
-  <div class="panel">
+  <div class="panel strip">
+    <div class="art">Panel 4: Cervantes and Lope de Vega as rival neighbours<br>48 × 48 mm</div>
+    <div>
     <span class="caption">1600s, the Golden Age</span>
-    <div class="art" style="height: 29mm">Your drawing: panel 4, Cervantes and Lope de Vega as rival neighbours<br>122 × 29 mm</div>
     <p class="small">Cervantes, Lope de Vega and Quevedo live a few streets apart in what is now the Barrio de las Letras. Velázquez paints the royal family. The quotes on the pavement there are theirs.</p>
+    </div>
   </div>
-  <div class="panel">
+  <div class="panel strip">
+    <div class="art">Panel 5: the uprising against Napoleon's soldiers<br>48 × 48 mm</div>
+    <div>
     <span class="caption">2 May 1808</span>
-    <div class="art" style="height: 29mm">Your drawing: panel 5, the uprising against Napoleon's soldiers<br>122 × 29 mm</div>
     <p class="small">Madrid rises against Napoleon's army. The next day the French shoot the rebels. Goya paints both days, and you can see them at the Prado (page 6).</p>
+    </div>
   </div>
-  <div class="panel">
+  <div class="panel strip">
+    <div class="art">Panel 6: a city under siege, then a punk concert<br>48 × 48 mm</div>
+    <div>
     <span class="caption">1936 to the 1980s</span>
-    <div class="art" style="height: 29mm">Your drawing: panel 6, a city under siege, then a punk concert<br>122 × 29 mm</div>
     <p class="small">The city survives a siege through the Civil War. After Franco dies in 1975 comes <b>La Movida</b>: punk, art and Almodóvar films.</p>
+    </div>
   </div>
   <span class="folio">4</span>
 </section>

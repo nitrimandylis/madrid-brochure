@@ -76,3 +76,14 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 ## Not sourced, general knowledge
 
 Sol clock at New Year, Plaza Mayor's past (bullfights, Inquisition) and Christmas market, Palacio Real 3,000+ rooms, tortilla "poco hecha", café con leche and cortado, the Spanish phrases.
+
+## Tracing references (guides only, never printed)
+
+- cover: File:El oso y el madroño - 02.jpg, CC BY-SA 3.0: https://commons.wikimedia.org/wiki/File:El_oso_y_el_madro%C3%B1o_-_02.jpg
+- panel1: File:Muralla árabe de Madrid 01.jpg, CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Muralla_%C3%A1rabe_de_Madrid_01.jpg
+- panel2: File:Afonso VI, rei de Galiza, no Tombo A.jpg, Public domain: https://commons.wikimedia.org/wiki/File:Afonso_VI,_rei_de_Galiza,_no_Tombo_A.jpg
+- panel3: File:Felipe II por Sofonisba Anguissola, 1573.jpg, Public domain: https://commons.wikimedia.org/wiki/File:Felipe_II_por_Sofonisba_Anguissola,_1573.jpg
+- panel4: File:Cervantes Jáuregui.jpg, Public domain: https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg
+- panel5: File:El dos de mayo de 1808 en Madrid.jpg, Public domain: https://commons.wikimedia.org/wiki/File:El_dos_de_mayo_de_1808_en_Madrid.jpg
+- panel6: File:Edificio Telefónica (Gran Vía 28, Madrid) 01.jpg, CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Edificio_Telef%C3%B3nica_(Gran_V%C3%ADa_28,_Madrid)_01.jpg
+- map: street data © OpenStreetMap contributors (ODbL), via Overpass
