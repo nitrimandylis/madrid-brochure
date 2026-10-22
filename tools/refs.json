@@ -1,10 +1,8 @@
 {
  "cover": {
-  "title": "File:El oso y el madroño - 02.jpg",
-  "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/El_oso_y_el_madro%C3%B1o_-_02.jpg/1920px-El_oso_y_el_madro%C3%B1o_-_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-  "page": "https://commons.wikimedia.org/wiki/File:El_oso_y_el_madro%C3%B1o_-_02.jpg",
-  "licence": "CC BY-SA 3.0",
-  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kadellar\" title=\"User:Kadellar\">Carlo"
+  "title": "File:Escultura del Oso y el Madroño, Puerta del Sol, Madrid, España, Spain.jpg",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Escultura_del_Oso_y_el_Madro%C3%B1o,_Puerta_del_Sol,_Madrid,_Espa%C3%B1a,_Spain.jpg"
  },
  "panel1": {
   "title": "File:Muralla árabe de Madrid 01.jpg",
@@ -35,9 +33,9 @@
   "artist": "<bdi>Attributed to <a href=\"https://en.wikipedia.org/wiki/en:Juan_de_J%C3%A1ureg"
  },
  "panel5": {
-  "title": "File:El dos de mayo de 1808 en Madrid.jpg",
-  "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/El_dos_de_mayo_de_1808_en_Madrid.jpg/1920px-El_dos_de_mayo_de_1808_en_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-  "page": "https://commons.wikimedia.org/wiki/File:El_dos_de_mayo_de_1808_en_Madrid.jpg",
+  "title": "File:El Tres de Mayo, by Francisco de Goya, from Prado (cropped).jpg",
+  "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_%28cropped%29.jpg/1920px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_(cropped).jpg",
   "licence": "Public domain",
   "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Francisco_Goya\" class=\"extiw\" tit"
  },

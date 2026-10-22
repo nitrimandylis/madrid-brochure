@@ -150,7 +150,8 @@
     font-size: 10pt;
     padding: 2mm;
   }
-  .art img { width: 100%; height: 100%; object-fit: contain; }
+  .art:has(img) { padding: 0; border: var(--line) solid var(--ink); background: none; }
+  .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .strip { display: grid; grid-template-columns: 48mm 1fr; gap: 3mm; align-items: start; }
   .strip .art { height: 48mm; }
@@ -222,7 +223,7 @@
 <!-- PAGE 1: COVER -->
 <section class="page cover">
   <h1 class="masthead">¡Madrid!</h1>
-  <div class="art">Your drawing: cover<br>134 × 110 mm</div>
+  <div class="art"><img src="art/cover.png" alt="The bear and the strawberry tree statue in Puerta del Sol"></div>
   <div class="panel tagline">A comic survival guide for IB2. Madrid and Toledo, 26 to 29 November 2026.</div>
 </section>
 
@@ -250,21 +251,21 @@
 <section class="page">
   <h2 class="title">1,100 years in 6 panels</h2>
   <div class="panel strip">
-    <div class="art">Panel 1: a Moorish fortress on a hill<br>48 × 48 mm</div>
+    <div class="art"><img src="art/panel1.png" alt="The Moorish wall of Madrid"></div>
     <div>
     <span class="caption">Late 800s</span>
     <p class="small">Emir Muhammad I of Córdoba builds a fortress on a hill over the Manzanares river. He calls it <b>Mayrit</b>, probably from the Arabic for "water channel".</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art">Panel 2: a soldier climbing the wall like a cat<br>48 × 48 mm</div>
+    <div class="art"><img src="art/panel2.png" alt="King Alfonso VI"></div>
     <div>
     <span class="caption">1085</span>
     <p class="small">King Alfonso VI of Castile takes Mayrit. Legend says one soldier climbed the wall by hand, and that is why madrileños are still called <i>gatos</i>.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art">Panel 3: Philip II arriving with the royal court<br>48 × 48 mm</div>
+    <div class="art"><img src="art/panel3.png" alt="King Philip II"></div>
     <div>
     <span class="caption">1561</span>
     <p class="small">King Philip II moves the royal court to Madrid, then a small town. It has been the capital ever since (apart from 1601 to 1606).</p>
@@ -276,21 +277,21 @@
 <section class="page left">
   <h2 class="title">…and still going</h2>
   <div class="panel strip">
-    <div class="art">Panel 4: Cervantes and Lope de Vega as rival neighbours<br>48 × 48 mm</div>
+    <div class="art"><img src="art/panel4.png" alt="Miguel de Cervantes"></div>
     <div>
     <span class="caption">1600s, the Golden Age</span>
     <p class="small">Cervantes, Lope de Vega and Quevedo live a few streets apart in what is now the Barrio de las Letras. Velázquez paints the royal family. The quotes on the pavement there are theirs.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art">Panel 5: the uprising against Napoleon's soldiers<br>48 × 48 mm</div>
+    <div class="art"><img src="art/panel5.png" alt="Goya's Third of May 1808"></div>
     <div>
     <span class="caption">2 May 1808</span>
     <p class="small">Madrid rises against Napoleon's army. The next day the French shoot the rebels. Goya paints both days, and you can see them at the Prado (page 6).</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art">Panel 6: a city under siege, then a punk concert<br>48 × 48 mm</div>
+    <div class="art"><img src="art/panel6.png" alt="The Telefónica building on Gran Vía"></div>
     <div>
     <span class="caption">1936 to the 1980s</span>
     <p class="small">The city survives a siege through the Civil War. After Franco dies in 1975 comes <b>La Movida</b>: punk, art and Almodóvar films.</p>
@@ -302,7 +303,7 @@
 <!-- PAGE 5: MAP -->
 <section class="page">
   <h2 class="title">Where everything is</h2>
-  <div class="art" style="height: 128mm; background-color: #fff">Your drawing: map of central Madrid with the numbered spots below<br>134 × 128 mm</div>
+  <div class="art" style="height: 128mm"><img src="art/map.png" alt="Map of central Madrid with the eight spots numbered"></div>
   <div class="panel small grid2">
     <div>
       <p>1 Puerta del Sol and Km 0</p>
