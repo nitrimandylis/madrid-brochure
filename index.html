@@ -178,7 +178,7 @@
   /* ---------- Cover ---------- */
   .cover { background: var(--crimson); padding: 6mm; }
   .cover .masthead {
-    font-size: 58pt;
+    font-size: 66pt;
     color: var(--sol);
     -webkit-text-stroke: 0.6mm var(--ink);
     text-shadow: 1.2mm 1.2mm 0 var(--ink);
@@ -186,8 +186,9 @@
     transform: rotate(-3deg);
     margin-top: 2mm;
   }
-  .cover .art { flex: 1; background-color: #fff; }
-  .cover .tagline { background: var(--sol); font-size: 13pt; }
+  .cover { justify-content: space-evenly; }
+  .cover .art { flex: none; aspect-ratio: 134 / 110; transform: rotate(-1.5deg); box-shadow: 1.6mm 1.6mm 0 var(--ink); }
+  .cover .tagline { background: var(--sol); font-size: 15pt; }
 
   /* Pages with less text: bigger type, panels spread to fill */
   .roomy { justify-content: space-between; }
@@ -223,8 +224,8 @@
 <!-- PAGE 1: COVER -->
 <section class="page cover">
   <h1 class="masthead">¡Madrid!</h1>
-  <div class="art"><img src="art/cover.png" alt="The bear and the strawberry tree statue in Puerta del Sol"></div>
-  <div class="panel tagline">A comic survival guide for IB2. Madrid and Toledo, 26 to 29 November 2026.</div>
+  <div class="art"><img src="art/cover-ink.png" alt="The bear and the strawberry tree statue in Puerta del Sol"></div>
+  <div class="panel tagline">A comic survival guide to Madrid and Toledo, made for IB2.</div>
 </section>
 
 <!-- PAGE 2: NUMBERS AND FACTS -->
@@ -251,14 +252,14 @@
 <section class="page">
   <h2 class="title">1,100 years in 6 panels</h2>
   <div class="panel strip">
-    <div class="art"><img src="art/panel1.png" alt="The Almudena cathedral above the Moorish wall"></div>
+    <div class="art"><img src="art/panel1-ink.png" alt="The Almudena cathedral above the Moorish wall"></div>
     <div>
     <span class="caption">Late 800s</span>
     <p class="small">Emir Muhammad I of Córdoba builds a fortress on a hill over the Manzanares river. He calls it <b>Mayrit</b>, probably from the Arabic for "water channel". <b>Spot it:</b> what is left of the wall, below the Almudena cathedral.</p>
     </div>
   </div>
   <div class="panel strip">
-    <div class="art"><img src="art/panel2.png" alt="Statue of Alfonso VI"></div>
+    <div class="art"><img src="art/panel2-ink.png" alt="Statue of Alfonso VI"></div>
     <div>
     <span class="caption">1085</span>
     <p class="small">King Alfonso VI of Castile takes Mayrit. Legend says one soldier climbed the wall by hand, and that is why madrileños are still called <i>gatos</i>. <b>Spot it:</b> his statue in the Sabatini Gardens.</p>
