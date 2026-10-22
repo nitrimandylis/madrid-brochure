@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Madrid! A comic guide for IB2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Patrick+Hand&display=block" rel="stylesheet">
+<style>
+  /* Palette taken from Madrid itself */
+  :root {
+    --crimson: #b0102e;   /* Madrid flag */
+    --sol: #ffc72c;       /* Puerta del Sol yellow */
+    --metro: #1450a0;     /* Metro de Madrid blue */
+    --ink: #000;
+    --paper: #fffaf0;
+    --line: 0.7mm;
+  }
+
+  @page { size: 148mm 210mm; margin: 0; }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0;
+    background: #8a8a8a;
+    font-family: "Patrick Hand", "Comic Sans MS", cursive;
+    font-size: 13pt;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  h1, h2, h3 {
+    font-family: "Bowlby One", Impact, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+  }
+
+  p { margin: 0 0 1.6mm; }
+
+  a { color: var(--metro); text-decoration: underline dotted; text-underline-offset: 0.6mm; }
+
+  /* One A5 page */
+  .page {
+    width: 148mm;
+    height: 210mm;
+    padding: 7mm;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+  }
+
+  @media screen {
+    .page { margin: 10mm auto; box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.35); }
+  }
+
+  /* Page number in the outer bottom corner */
+  .folio {
+    position: absolute;
+    bottom: 3mm;
+    right: 5mm;
+    font-family: "Bowlby One", sans-serif;
+    font-size: 8pt;
+  }
+  .page.left .folio { right: auto; left: 5mm; }
+
+  /* Page title: a comic masthead strip */
+  .title {
+    font-size: 21pt;
+    padding: 2mm 3mm 1.5mm;
+    background: var(--crimson);
+    color: #fff;
+    border: var(--line) solid var(--ink);
+    -webkit-text-stroke: 0.25mm var(--ink);
+    text-shadow: 0.6mm 0.6mm 0 var(--ink);
+  }
+
+  /* Comic panel */
+  .panel {
+    border: var(--line) solid var(--ink);
+    background: #fff;
+    padding: 2.5mm 3mm;
+    position: relative;
+  }
+
+  /* Ben-Day dots, the one loud thing */
+  .dots-sol    { background: radial-gradient(circle, var(--sol) 34%, transparent 36%) 0 0 / 2mm 2mm, #fff; }
+  .dots-red    { background: radial-gradient(circle, #f4a3a8 34%, transparent 36%) 0 0 / 2mm 2mm, #fff; }
+  .dots-blue   { background: radial-gradient(circle, #a9c4ea 34%, transparent 36%) 0 0 / 2mm 2mm, #fff; }
+
+  /* Yellow caption box, as in a tebeo */
+  .caption {
+    display: inline-block;
+    background: var(--sol);
+    border: 0.5mm solid var(--ink);
+    padding: 0.6mm 2mm;
+    font-size: 10.5pt;
+    margin-bottom: 1.5mm;
+  }
+
+  /* Speech bubble with a tail */
+  .bubble {
+    background: #fff;
+    border: 0.5mm solid var(--ink);
+    border-radius: 5mm;
+    padding: 2mm 3mm;
+    position: relative;
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -2.3mm;
+    left: 6mm;
+    width: 3.5mm;
+    height: 3.5mm;
+    background: #fff;
+    border-right: 0.5mm solid var(--ink);
+    border-bottom: 0.5mm solid var(--ink);
+    transform: skewX(30deg) rotate(45deg);
+  }
+
+  /* Big number + label, comic burst style */
+  .stat b {
+    display: block;
+    font-family: "Bowlby One", sans-serif;
+    font-weight: 400;
+    font-size: 17pt;
+    color: var(--crimson);
+    line-height: 1;
+    margin-bottom: 0.8mm;
+  }
+
+  /* Where a hand drawing goes until Nick scans it */
+  .art {
+    border: 0.5mm dashed var(--metro);
+    background: repeating-linear-gradient(45deg, #eef3fb 0 2mm, #fff 2mm 4mm);
+    color: var(--metro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10pt;
+    padding: 2mm;
+  }
+  .art img { width: 100%; height: 100%; object-fit: contain; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; }
+
+  .metro {
+    display: inline-block;
+    background: var(--metro);
+    color: #fff;
+    border-radius: 1.2mm;
+    padding: 0 1.4mm;
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 10.5pt;
+  }
+
+  .small { font-size: 11.5pt; }
+  .skip { color: var(--crimson); }
+
+  h3 { font-size: 12.5pt; margin-bottom: 1mm; }
+
+  /* ---------- Cover ---------- */
+  .cover { background: var(--crimson); padding: 6mm; }
+  .cover .masthead {
+    font-size: 58pt;
+    color: var(--sol);
+    -webkit-text-stroke: 0.6mm var(--ink);
+    text-shadow: 1.2mm 1.2mm 0 var(--ink);
+    text-align: center;
+    transform: rotate(-3deg);
+    margin-top: 2mm;
+  }
+  .cover .art { flex: 1; background-color: #fff; }
+  .cover .tagline { background: var(--sol); font-size: 13pt; }
+
+  /* Pages with less text: bigger type, panels spread to fill */
+  .roomy { justify-content: space-between; }
+  .roomy .small { font-size: 13pt; }
+  .roomy h3 { font-size: 14pt; }
+  .roomy .checks { font-size: 15pt; }
+  .roomy .checks li { margin-bottom: 4.5mm; }
+
+  /* ---------- Checklist ---------- */
+  .checks { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 4mm; }
+  .checks li { break-inside: avoid; padding-left: 6mm; position: relative; margin-bottom: 2.2mm; }
+  .checks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6mm;
+    width: 3.6mm;
+    height: 3.6mm;
+    border: 0.5mm solid var(--ink);
+    background: #fff;
+  }
+
+  @media screen { .page[data-overflow] { outline: 3mm solid red; } }
+
+  /* ---------- Booklet sheets (?booklet) ---------- */
+  .sheet { display: flex; width: 297mm; height: 210mm; break-after: page; }
+  .sheet .page { margin: 0; box-shadow: none; break-after: auto; }
+  @media screen { .sheet { margin: 10mm auto; outline: 1px solid #555; } }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<section class="page cover">
+  <h1 class="masthead">¡Madrid!</h1>
+  <div class="art">Your drawing: cover<br>134 × 110 mm</div>
+  <div class="panel tagline">A comic survival guide for IB2. Madrid and Toledo, 26 to 29 November 2026.</div>
+</section>
+
+<!-- PAGE 2: NUMBERS AND FACTS -->
+<section class="page left">
+  <h2 class="title">Madrid in numbers</h2>
+  <div class="grid2">
+    <div class="panel dots-sol stat"><b>650 m</b>above sea level, about. That makes it the highest capital in the EU. Bring a jacket.</div>
+    <div class="panel stat"><b>Km 0</b>Every road distance in Spain is measured from a plaque on the pavement in Puerta del Sol.</div>
+    <div class="panel stat"><b>1725</b>Sobrino de Botín opened. Guinness lists it as the oldest restaurant in the world.</div>
+    <div class="panel dots-blue stat"><b>1919</b>The first metro line opened, Sol to Cuatro Caminos. Today there are 13.</div>
+    <div class="panel dots-red stat"><b>2,200</b>years old: the Templo de Debod, a real Egyptian temple Egypt gave Spain in 1968.</div>
+    <div class="panel stat"><b>3.5 M</b>people live in the city. They call themselves madrileños.</div>
+  </div>
+  <div class="bubble">
+    <p><b>Why "gatos"?</b> People born in Madrid are nicknamed cats. The legend says that in 1085 a soldier climbed the city wall with his bare hands like a cat, and the name stuck to his family, then to everyone.</p>
+  </div>
+  <div class="panel small">
+    <p><b>Why a comic?</b> In Spain a comic is a <i>tebeo</i>, after the magazine <i>TBO</i> (1917). The most famous one, <i>Mortadelo y Filemón</i> by Francisco Ibáñez (1958), is still sold at every kiosk in Madrid.</p>
+  </div>
+  <span class="folio">2</span>
+</section>
+
+<!-- PAGES 3-4: HISTORY STRIP -->
+<section class="page">
+  <h2 class="title">1,100 years in 6 panels</h2>
+  <div class="panel">
+    <span class="caption">Late 800s</span>
+    <div class="art" style="height: 29mm">Your drawing: panel 1, a Moorish fortress on a hill<br>122 × 29 mm</div>
+    <p class="small">Emir Muhammad I of Córdoba builds a fortress on a hill over the Manzanares river. He calls it <b>Mayrit</b>, probably from the Arabic for "water channel".</p>
+  </div>
+  <div class="panel">
+    <span class="caption">1085</span>
+    <div class="art" style="height: 29mm">Your drawing: panel 2, a soldier climbing the wall like a cat<br>122 × 29 mm</div>
+    <p class="small">King Alfonso VI of Castile takes Mayrit. Legend says one soldier climbed the wall by hand, and that is why madrileños are still called <i>gatos</i>.</p>
+  </div>
+  <div class="panel">
+    <span class="caption">1561</span>
+    <div class="art" style="height: 29mm">Your drawing: panel 3, Philip II arriving with the royal court<br>122 × 29 mm</div>
+    <p class="small">King Philip II moves the royal court to Madrid, then a small town. It has been the capital ever since (apart from 1601 to 1606).</p>
+  </div>
+  <span class="folio">3</span>
+</section>
+
+<section class="page left">
+  <h2 class="title">…and still going</h2>
+  <div class="panel">
+    <span class="caption">1600s, the Golden Age</span>
+    <div class="art" style="height: 29mm">Your drawing: panel 4, Cervantes and Lope de Vega as rival neighbours<br>122 × 29 mm</div>
+    <p class="small">Cervantes, Lope de Vega and Quevedo live a few streets apart in what is now the Barrio de las Letras. Velázquez paints the royal family. The quotes on the pavement there are theirs.</p>
+  </div>
+  <div class="panel">
+    <span class="caption">2 May 1808</span>
+    <div class="art" style="height: 29mm">Your drawing: panel 5, the uprising against Napoleon's soldiers<br>122 × 29 mm</div>
+    <p class="small">Madrid rises against Napoleon's army. The next day the French shoot the rebels. Goya paints both days, and you can see them at the Prado (page 6).</p>
+  </div>
+  <div class="panel">
+    <span class="caption">1936 to the 1980s</span>
+    <div class="art" style="height: 29mm">Your drawing: panel 6, a city under siege, then a punk concert<br>122 × 29 mm</div>
+    <p class="small">The city survives a siege through the Civil War. After Franco dies in 1975 comes <b>La Movida</b>: punk, art and Almodóvar films.</p>
+  </div>
+  <span class="folio">4</span>
+</section>
+
+<!-- PAGE 5: MAP -->
+<section class="page">
+  <h2 class="title">Where everything is</h2>
+  <div class="art" style="height: 128mm; background-color: #fff">Your drawing: map of central Madrid with the numbered spots below<br>134 × 128 mm</div>
+  <div class="panel small grid2">
+    <div>
+      <p>1 Puerta del Sol and Km 0</p>
+      <p>2 Plaza Mayor</p>
+      <p>3 Palacio Real</p>
+      <p>4 Templo de Debod</p>
+    </div>
+    <div>
+      <p>5 Gran Vía</p>
+      <p>6 Museo del Prado</p>
+      <p>7 El Retiro</p>
+      <p>8 El Rastro, La Latina</p>
+    </div>
+  </div>
+  <span class="folio">5</span>
+</section>
+
+<!-- PAGE 6: PRADO -->
+<section class="page left">
+  <h2 class="title">Prado hunt</h2>
+  <div class="bubble small">
+    <p>The Prado has over 1,000 paintings on show. You won't see them all, so hunt these five. Tick each one on page 12.</p>
+  </div>
+  <div class="panel dots-sol">
+    <h3>1. <a href="https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f">Las Meninas</a>, Velázquez <span class="small">(Room 12)</span></h3>
+    <p class="small">Look for the painter himself, brush in hand, and the king and queen reflected in the mirror at the back.</p>
+  </div>
+  <div class="panel">
+    <h3>2. The Garden of Earthly Delights, Bosch <span class="small">(Room 56A)</span></h3>
+    <p class="small">Find the music score painted on a man's bottom. A choir behind him is singing from it.</p>
+  </div>
+  <div class="panel">
+    <h3>3. The Third of May 1808, Goya <span class="small">(Room 64)</span></h3>
+    <p class="small">The executions from page 4. The man in white has marks on his hands like Christ's.</p>
+  </div>
+  <div class="panel dots-red">
+    <h3>4. Saturn Devouring His Son, Goya <span class="small">(Room 67)</span></h3>
+    <p class="small">One of the Black Paintings Goya painted on the walls of his own house. They were cut off and moved here.</p>
+  </div>
+  <div class="panel">
+    <h3>5. The Nobleman with his Hand on his Chest, El Greco <span class="small">(Room 8B)</span></h3>
+    <p class="small">Remember his face: El Greco lived in Toledo, and you'll meet him again on page 10.</p>
+  </div>
+  <div class="panel small">
+    <p><b>Free entry:</b> Monday to Saturday 18:00 to 20:00, Sunday 17:00 to 19:00. Under 18s and students up to 25 get in free with ID, so bring your student card. Rooms change when paintings move: check the floor plan at the door. <span class="metro">Banco de España L2</span> <span class="metro">Estación del Arte L1</span></p>
+  </div>
+  <span class="folio">6</span>
+</section>
+
+<!-- PAGES 7-8: SIGHTSEEING -->
+<section class="page roomy">
+  <h2 class="title">Go see</h2>
+  <div class="panel">
+    <h3>1. <a href="https://www.google.com/maps/search/?api=1&query=Puerta+del+Sol+Madrid">Puerta del Sol</a> <span class="metro">Sol L1 L2 L3</span></h3>
+    <p class="small">Stand on Km 0, find the bear and the strawberry tree statue, the city's symbol, and the clock that Spain watches at midnight on New Year's Eve.</p>
+    <p class="small skip">Skip if: crowds bother you. It's the busiest square in Spain.</p>
+  </div>
+  <div class="panel">
+    <h3>2. <a href="https://www.google.com/maps/search/?api=1&query=Plaza+Mayor+Madrid">Plaza Mayor</a> <span class="metro">Sol</span></h3>
+    <p class="small">A 17th-century square that once held bullfights and trials of the Inquisition. Now it holds the Christmas market, which should be open while we're there.</p>
+    <p class="small skip">Skip if: you're hungry. The terraces here are tourist prices.</p>
+  </div>
+  <div class="panel">
+    <h3>3. <a href="https://www.google.com/maps/search/?api=1&query=Palacio+Real+de+Madrid">Palacio Real</a> <span class="metro">Ópera L2 L5</span></h3>
+    <p class="small">Over 3,000 rooms, the biggest royal palace in Western Europe. The king doesn't live here, he just uses it for ceremonies. EU citizens get in free on Thursday 26 November, 16:00 to 18:00.</p>
+    <p class="small skip">Skip if: you only want the outside. The square in front is free.</p>
+  </div>
+  <div class="panel dots-sol">
+    <h3>4. <a href="https://www.google.com/maps/search/?api=1&query=Templo+de+Debod+Madrid">Templo de Debod</a> <span class="metro">Ventura Rodríguez L3</span></h3>
+    <p class="small">An Egyptian temple in a park. Go at sunset, about 17:50: it's the best free view in Madrid. Closed inside on Mondays.</p>
+    <p class="small skip">Skip if: you're going in daylight. It's the sunset that makes it.</p>
+  </div>
+  <span class="folio">7</span>
+</section>
+
+<section class="page roomy left">
+  <h2 class="title">Go see, part 2</h2>
+  <div class="panel">
+    <h3>5. <a href="https://www.google.com/maps/search/?api=1&query=Gran+Via+Madrid">Gran Vía</a> <span class="metro">Gran Vía L1 L5</span></h3>
+    <p class="small">Madrid's Broadway: theatres, shops and early 1900s buildings. Look up at the Metrópolis building's dome.</p>
+    <p class="small skip">Skip if: you hate shopping crowds on a Saturday.</p>
+  </div>
+  <div class="panel">
+    <h3>6. <a href="https://www.google.com/maps/search/?api=1&query=Parque+del+Retiro+Madrid">El Retiro</a> <span class="metro">Retiro L2</span></h3>
+    <p class="small">Rowing boats on the lake, the glass Palacio de Cristal, and the Fallen Angel, one of the few statues of the devil in any city.</p>
+    <p class="small skip">Skip if: it's raining. It's all outdoors.</p>
+  </div>
+  <div class="panel dots-blue">
+    <h3>7. <a href="https://www.google.com/maps/search/?api=1&query=El+Rastro+Madrid">El Rastro</a> <span class="metro">La Latina L5</span></h3>
+    <p class="small">A huge street flea market, Sunday mornings only, and we are there on Sunday 29 November. Vintage clothes, vinyl, old comics.</p>
+    <p class="small skip">Skip if: you'd rather sleep in. It runs 09:00 to 15:00.</p>
+  </div>
+  <div class="panel">
+    <h3>8. <a href="https://www.google.com/maps/search/?api=1&query=Estadio+Santiago+Bernabeu">Santiago Bernabéu</a> <span class="metro">Santiago Bernabéu L10</span></h3>
+    <p class="small">Real Madrid's stadium, rebuilt with a retractable roof. The tour takes you to the dressing room and the pitch side.</p>
+    <p class="small skip">Skip if: you're not into football. The tour isn't cheap.</p>
+  </div>
+  <span class="folio">8</span>
+</section>
+
+<!-- PAGE 9: FOOD AND DRINKS -->
+<section class="page roomy">
+  <h2 class="title">Eat and drink</h2>
+  <div class="grid2">
+    <div class="panel dots-sol">
+      <h3>Bocadillo de calamares</h3>
+      <p class="small">Fried squid in a baguette, Madrid's own sandwich, cheapest in the bars around <a href="https://www.google.com/maps/search/?api=1&query=Plaza+Mayor+Madrid">Plaza Mayor</a>.</p>
+    </div>
+    <div class="panel">
+      <h3>Tortilla</h3>
+      <p class="small">Potato omelette, served by the slice in almost every bar. Ask if it's <i>poco hecha</i> (runny).</p>
+    </div>
+    <div class="panel">
+      <h3>Cocido madrileño</h3>
+      <p class="small">Chickpea and meat stew served in three rounds: soup first, then the chickpeas, then the meat.</p>
+    </div>
+    <div class="panel">
+      <h3>Markets</h3>
+      <p class="small"><a href="https://www.google.com/maps/search/?api=1&query=Mercado+de+San+Miguel+Madrid">San Miguel</a> is beautiful and expensive. <a href="https://www.google.com/maps/search/?api=1&query=Mercado+de+San+Anton+Madrid">San Antón</a> in Chueca is cheaper and more local.</p>
+    </div>
+  </div>
+  <div class="panel dots-red">
+    <h3><a href="https://www.google.com/maps/search/?api=1&query=Chocolateria+San+Gines+Madrid">Chocolatería San Ginés</a>, since 1894</h3>
+    <p class="small">Churros dipped in chocolate so thick the spoon stands up. Open all day and very late. Order <i>chocolate con churros</i> or the thicker <i>porras</i>.</p>
+  </div>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Café con leche</h3>
+      <p class="small">Half coffee, half hot milk. Want it smaller and stronger? Ask for a <i>cortado</i>.</p>
+    </div>
+    <div class="panel">
+      <h3><a href="https://www.google.com/maps/search/?api=1&query=La+Violeta+Madrid">La Violeta</a></h3>
+      <p class="small">A tiny shop near Sol selling violet sweets since 1915. They taste like perfume, in a good way.</p>
+    </div>
+  </div>
+  <div class="bubble small">
+    <p><b>Meal times will catch you out.</b> Lunch is about 13:30 to 15:30 and dinner starts around 21:00. A restaurant that's empty at 19:30 isn't bad, it's just early.</p>
+  </div>
+  <span class="folio">9</span>
+</section>
+
+<!-- PAGE 10: TOLEDO -->
+<section class="page roomy left">
+  <h2 class="title">Day trip: Toledo</h2>
+  <div class="bubble small">
+    <p>Spain's capital before Madrid, on a hill wrapped by the Tagus river. Christians, Muslims and Jews lived here side by side, so it's called the <b>city of three cultures</b>. The whole old town is a UNESCO World Heritage Site (1986). The Avant train from Atocha takes about 33 minutes.</p>
+  </div>
+  <div class="grid2">
+    <div class="panel dots-sol">
+      <h3><a href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+Santo+Tome+Toledo">Santo Tomé</a></h3>
+      <p class="small">El Greco's <i>Burial of the Count of Orgaz</i>, same painter as the Prado nobleman. The boy at the front is his son, and the handkerchief in his pocket carries the year he was born, 1578.</p>
+    </div>
+    <div class="panel">
+      <h3><a href="https://www.google.com/maps/search/?api=1&query=Catedral+Primada+Toledo">The Cathedral</a></h3>
+      <p class="small">Gothic, enormous, and full of El Grecos in its sacristy.</p>
+    </div>
+    <div class="panel">
+      <h3><a href="https://www.google.com/maps/search/?api=1&query=Sinagoga+de+Santa+Maria+la+Blanca+Toledo">Santa María la Blanca</a></h3>
+      <p class="small">A synagogue built by Muslim craftsmen, later turned into a church. Three cultures in one room.</p>
+    </div>
+    <div class="panel">
+      <h3><a href="https://www.google.com/maps/search/?api=1&query=Mirador+del+Valle+Toledo">Mirador del Valle</a></h3>
+      <p class="small">The postcard view of the whole city from across the river.</p>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="panel dots-red">
+      <h3>Mazapán</h3>
+      <p class="small">Toledo's marzipan is protected by law, like champagne: only Toledo's can use the name. Buy a box in the old town.</p>
+    </div>
+    <div class="panel">
+      <h3>Swords</h3>
+      <p class="small">Toledo has made swords since about 500 BC. Shops still sell swords. You can't fly home with one.</p>
+    </div>
+  </div>
+  <span class="folio">10</span>
+</section>
+
+<!-- PAGE 11: SURVIVAL KIT -->
+<section class="page roomy">
+  <h2 class="title">Survival kit</h2>
+  <div class="panel">
+    <h3>Ten phrases</h3>
+    <div class="grid2 small">
+      <div>
+        <p><b>Hola, buenas</b> hi (to anyone)</p>
+        <p><b>¿Me pones…?</b> can I get…?</p>
+        <p><b>La cuenta, por favor</b> the bill</p>
+        <p><b>¿Dónde está el metro?</b></p>
+        <p><b>¿Cuánto cuesta?</b> how much?</p>
+      </div>
+      <div>
+        <p><b>Para llevar</b> to take away</p>
+        <p><b>Sin gluten / vegetariano</b></p>
+        <p><b>Perdón</b> sorry, excuse me</p>
+        <p><b>¡Qué guay!</b> how cool</p>
+        <p><b>Vale</b> OK (you'll hear it 100 times)</p>
+      </div>
+    </div>
+  </div>
+  <div class="panel dots-blue">
+    <h3>Metro</h3>
+    <p class="small">Buy a red <b>Tarjeta Multi</b> card (€2.50) at any station and load a 10-trip ticket for €7.30. Friends can share one card, tapping in one at a time. Or get the Tourist Ticket: 4 days for €27.80, card included.</p>
+  </div>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Money</h3>
+      <p class="small">Cards work almost everywhere. Tipping is optional: round up or leave a coin or two.</p>
+    </div>
+    <div class="panel">
+      <h3>Weather</h3>
+      <p class="small">Late November averages 6 to 14 °C, with some rain. The sun sets around 17:50.</p>
+    </div>
+  </div>
+  <div class="panel dots-red">
+    <h3>Emergency: 112</h3>
+    <p class="small">Free, from any phone, with interpreters. Keep bags zipped on the metro and in Sol: pickpockets love tourists.</p>
+  </div>
+  <span class="folio">11</span>
+</section>
+
+<!-- PAGE 12: CHECKLIST -->
+<section class="page roomy left">
+  <h2 class="title">Did you spot it?</h2>
+  <ul class="checks">
+    <li>The bear and the strawberry tree in Sol</li>
+    <li>The Km 0 plaque</li>
+    <li>Las Meninas</li>
+    <li>The man with music on his bottom</li>
+    <li>The Third of May</li>
+    <li>Saturn</li>
+    <li>El Greco's nobleman</li>
+    <li>El Greco again, in Toledo</li>
+    <li>A bocadillo de calamares</li>
+    <li>Churros at San Ginés</li>
+    <li>Sunset at Debod</li>
+    <li>The Fallen Angel in the Retiro</li>
+    <li>A Cervantes quote on the pavement</li>
+    <li>Toledo marzipan</li>
+    <li>A sword you can't take home</li>
+    <li>Said "vale" without thinking</li>
+  </ul>
+  <div class="panel dots-sol" style="margin-top: auto">
+    <p>Made by Nick for IB2, November 2026. Every fact has a source in this brochure's sources list.</p>
+  </div>
+  <span class="folio">12</span>
+</section>
+
+<script>
+  // Flag any page whose content spills past the bottom edge
+  document.fonts.ready.then(function () {
+    document.querySelectorAll(".page").forEach(function (page, i) {
+      if (page.scrollHeight > page.clientHeight + 1) {
+        page.dataset.overflow = "yes";
+        console.error("Page " + (i + 1) + " overflows by " + (page.scrollHeight - page.clientHeight) + "px");
+      }
+    });
+  });
+
+  // ?booklet rearranges the A5 pages onto A4 sheets in fold order
+  // (for 12 pages: 12|1, 2|11, 10|3, 4|9, 8|5, 6|7).
+  if (location.search.includes("booklet")) {
+    var pages = Array.from(document.querySelectorAll(".page"));
+    var n = pages.length;
+    if (n % 4 !== 0) {
+      console.error("Booklet needs a multiple of 4 pages, found " + n);
+    }
+    var pageStyle = document.createElement("style");
+    pageStyle.textContent = "@page { size: 297mm 210mm; margin: 0; }";
+    document.head.appendChild(pageStyle);
+
+    for (var i = 0; i < n / 2; i++) {
+      var sheet = document.createElement("div");
+      sheet.className = "sheet";
+      var outer = pages[n - 1 - i];
+      var inner = pages[i];
+      if (i % 2 === 0) {
+        sheet.append(outer, inner);
+      } else {
+        sheet.append(inner, outer);
+      }
+      document.body.insertBefore(sheet, document.querySelector("script"));
+    }
+  }
+</script>
+</body>
+</html>
