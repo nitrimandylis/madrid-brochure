@@ -16,18 +16,19 @@ from map import SPOTS, xy, MM  # noqa: E402
 
 INK = (25, 25, 25, 255)
 HALO = (255, 250, 240, 255)
-X_HEIGHT_MM = 1.9  # how tall his small letters end up on the printed map
-PEN_MM = 0.35      # ink width
+X_HEIGHT_MM = 2.7  # how tall his small letters end up on the printed map
+PEN_MM = 0.55      # ink width
 
 # (text, top-left of the note in mm, rotation, what its leader line points at or None)
 NOTES = [
     ("Km 0 here", (66, 58), 0, None),
-    ("churros!", (40, 26), 0, (40.4170, -3.7069)),
+    ("churros!", (44, 17), 0, (40.4170, -3.7069)),
     ("FREE Thu 16-18", (3, 76), 0, 3),
-    ("sunset 17:50", (3, 42), 0, None),
+    ("sunset", (2, 39), 0, None),
+    ("17:50", (5, 45), 0, None),
     ("GRAN VIA", (72, 40), 10, None),
-    ("free 18-20", (80, 86), 0, None),
-    ("boats!", (106, 80), 0, None),
+    ("free 18-20", (76, 84), 0, None),
+    ("boats!", (108, 74), 0, None),
     ("SUNDAY 9-15 only", (24, 110), 0, None),
 ]
 
@@ -80,7 +81,7 @@ def main(src, out):
             lat, lon = SPOTS[target] if isinstance(target, int) else target
             tx, ty = xy(lat, lon)
             r = 4.2 * MM if isinstance(target, int) else 0.6 * MM   # stop at the circle's edge
-            sx, sy = x + note.width / 2, y + (note.height if ty > y else 0)
+            sx, sy = x + note.width / 2, (y + note.height + 0.5 * MM) if ty > y else (y - 0.5 * MM)
             length = ((tx - sx) ** 2 + (ty - sy) ** 2) ** 0.5
             leader(d, (sx, sy), (tx - (tx - sx) * r / length, ty - (ty - sy) * r / length))
             if not isinstance(target, int):
