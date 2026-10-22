@@ -13,14 +13,14 @@ MM = DPI / 25.4
 
 # art file -> what to add by hand
 PAGES = {
-    "cover": "Cover: a speech bubble for the bear, or your name and the trip dates",
-    "map": "Map: notes like 'churros here', 'metro Sol', arrows, street names",
-    "panel1": "Panel 1: label the wall, add a sound effect",
-    "panel2": "Panel 2: a bubble for Alfonso VI",
-    "panel3": "Panel 3: a bubble for Philip II",
-    "panel4": "Panel 4: a bubble for Cervantes",
-    "panel5": "Panel 5: a sound effect, ¡BANG!",
-    "panel6": "Panel 6: a caption or a punk scream",
+    "cover": "Cover",
+    "map": "Map (the notes are generated in your handwriting)",
+    "panel1": "Panel 1, late 800s",
+    "panel2": "Panel 2, 1085",
+    "panel3": "Panel 3, 1561",
+    "panel4": "Panel 4, Golden Age",
+    "panel5": "Panel 5, 2 May 1808",
+    "panel6": "Panel 6, 1936 to the 1980s",
 }
 
 
@@ -31,12 +31,17 @@ def sheet(art, note):
     d = ImageDraw.Draw(page)
     font = ImageFont.load_default(size=int(4 * MM))
     d.text((pad, pad // 2), note, fill=(120, 120, 120), font=font)
-    d.text((pad, pad // 2 + int(5.5 * MM)), "Black pen, write on top of the picture.", fill=(120, 120, 120), font=font)
+    d.text((pad, pad // 2 + int(5.5 * MM)), "Review and polish: add, fix or redo anything. Black pen.", fill=(120, 120, 120), font=font)
     return page
 
 
 if __name__ == "__main__":
     art_dir, out = Path(sys.argv[1]), sys.argv[2]
-    pages = [sheet(Image.open(art_dir / f"{name}.png").convert("RGB"), note) for name, note in PAGES.items()]
+    pages = []
+    for name, note in PAGES.items():
+        # use the version that already carries handwriting, when there is one
+        inked = [art_dir / f"{name}-ink.png", art_dir / f"{name}-notes.png"]
+        src = next((f for f in inked if f.exists()), art_dir / f"{name}.png")
+        pages.append(sheet(Image.open(src).convert("RGB"), note))
     pages[0].save(out, save_all=True, append_images=pages[1:], resolution=DPI)
     print("wrote", len(pages), "pages to", out)
