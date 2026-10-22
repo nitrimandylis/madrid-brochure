@@ -79,13 +79,20 @@ Sol clock at New Year, Plaza Mayor's past (bullfights, Inquisition) and Christma
 
 ## Art sources (comic-filtered by tools/comic.py)
 
-- cover: File:Escultura del Oso y el Madroño, Puerta del Sol, Madrid, España, Spain.jpg, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Escultura_del_Oso_y_el_Madro%C3%B1o,_Puerta_del_Sol,_Madrid,_Espa%C3%B1a,_Spain.jpg
-- panel1: File:Muralla árabe de Madrid 01.jpg, CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Muralla_%C3%A1rabe_de_Madrid_01.jpg
-- panel2: File:Afonso VI, rei de Galiza, no Tombo A.jpg, Public domain: https://commons.wikimedia.org/wiki/File:Afonso_VI,_rei_de_Galiza,_no_Tombo_A.jpg
-- panel3: File:Felipe II por Sofonisba Anguissola, 1573.jpg, Public domain: https://commons.wikimedia.org/wiki/File:Felipe_II_por_Sofonisba_Anguissola,_1573.jpg
-- panel4: File:Cervantes Jáuregui.jpg, Public domain: https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg
-- panel5: File:El Tres de Mayo, by Francisco de Goya, from Prado (cropped).jpg, Public domain: https://commons.wikimedia.org/wiki/File:El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_(cropped).jpg
-- panel6: File:Edificio Telefónica (Gran Vía 28, Madrid) 01.jpg, CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Edificio_Telef%C3%B3nica_(Gran_V%C3%ADa_28,_Madrid)_01.jpg
+- cover: File:Escultura del Oso y el Madroño, Puerta del Sol, Madrid, España, Spain.jpg, CC BY-SA 4.0, Carlos Teixidor Cadenas: https://commons.wikimedia.org/wiki/File:Escultura_del_Oso_y_el_Madro%C3%B1o,_Puerta_del_Sol,_Madrid,_Espa%C3%B1a,_Spain.jpg
+- panel1: File:Muralla musulmana - Catedral de Santa María la Real de la Almudena - Madrid.jpg, CC BY-SA 3.0, Carlos Delgado: https://commons.wikimedia.org/wiki/File:Muralla_musulmana_-_Catedral_de_Santa_Mar%C3%ADa_la_Real_de_la_Almudena_-_Madrid.jpg
+- panel2: File:Alfonso VI de León y Castilla 01.jpg, CC BY-SA 2.0, Luis García from Madrid (Spain): https://commons.wikimedia.org/wiki/File:Alfonso_VI_de_Le%C3%B3n_y_Castilla_01.jpg
+- panel3: File:Monumento a Felipe III (Madrid) 03.jpg, CC BY-SA 2.0, Lars Plougmann from United States: https://commons.wikimedia.org/wiki/File:Monumento_a_Felipe_III_(Madrid)_03.jpg
+- panel4: File:Monumento a Miguel de Cervantes - 03.jpg, CC BY-SA 3.0, Carlos Delgado: https://commons.wikimedia.org/wiki/File:Monumento_a_Miguel_de_Cervantes_-_03.jpg
+- panel5: File:Madrid - Malasaña, Plaza del Dos de Mayo, Monumento a Daoiz y Velarde 2.jpg, CC0, Zarateman: https://commons.wikimedia.org/wiki/File:Madrid_-_Malasa%C3%B1a,_Plaza_del_Dos_de_Mayo,_Monumento_a_Daoiz_y_Velarde_2.jpg
+- panel6: File:Telefónica - Gran Vía 28 - Madrid.jpg, CC BY 2.0, Manuel M. Vicente from Spain: https://commons.wikimedia.org/wiki/File:Telef%C3%B3nica_-_Gran_V%C3%ADa_28_-_Madrid.jpg
 - map: drawn by tools/map.py from OpenStreetMap data, © OpenStreetMap contributors (ODbL)
 
-CC BY-SA images: the brochure must credit the photographer and licence. The credit line goes on page 12.
+## Spot-it captions on pages 3-4
+
+- Moorish wall below the Almudena: https://commons.wikimedia.org/wiki/File:Muralla_musulmana_-_Catedral_de_Santa_Mar%C3%ADa_la_Real_de_la_Almudena_-_Madrid.jpg
+- Alfonso VI statue, Sabatini Gardens: https://commons.wikimedia.org/wiki/Category:Statue_of_Alfonso_VI_(Madrid)
+- Philip III statue, Plaza Mayor: https://en.wikipedia.org/wiki/Equestrian_statue_of_Philip_III
+- Cervantes monument, Plaza de España: https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a,_Madrid
+- Daoíz and Velarde died defending the Monteleón barracks: https://en.wikipedia.org/wiki/Dos_de_Mayo_Uprising
+- Telefónica building shelled in the siege: https://en.wikipedia.org/wiki/Telef%C3%B3nica_Building
