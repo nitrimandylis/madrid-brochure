@@ -64,7 +64,7 @@ def apply(export, n):
     ox0, oy0, ox1, oy1 = OVAL
     ImageDraw.Draw(inside).ellipse((ox0 - CROP[0] + 10, oy0 - CROP[1] + 10, ox1 - CROP[0] - 10, oy1 - CROP[1] - 10), fill=255)
     letters = Image.fromarray(np.minimum(np.asarray(letters), np.asarray(inside)))
-    letters = letters.filter(ImageFilter.MaxFilter(3))  # a touch bolder so it holds up in print
+    letters = letters.filter(ImageFilter.MaxFilter(5))  # a touch bolder so it holds up in print
     cover = draw_bubble(Image.open("art/cover.png").convert("RGB"))
     full = Image.new("L", cover.size, 0)
     full.paste(letters, (CROP[0], CROP[1]))
