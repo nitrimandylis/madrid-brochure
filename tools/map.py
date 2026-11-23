@@ -14,6 +14,7 @@ PAPER = (255, 250, 240)
 PARK = (160, 200, 130)
 RIVER = (20, 80, 160)
 CRIMSON = (176, 16, 46)
+METRO = (20, 80, 160)
 BOWLBY = str(Path(__file__).parent / "fonts" / "BowlbyOne-Regular.ttf")
 LETTERING = str(Path(__file__).parent / "fonts" / "ComicNeue-Bold.ttf")
 DPI = 300
@@ -31,10 +32,11 @@ SPOTS = {
     7: (40.4153, -3.6845),  # Retiro lake
     8: (40.4087, -3.7076),  # El Rastro
 }
+HOTEL = (40.4220, -3.7097)  # Grupotel Mayorazgo, Calle de la Flor Baja 3 (OSM node 11603023656)
 
 # street names, written along the street: (name, start lat/lon, end lat/lon)
 STREETS = [
-    ("GRAN VÍA", (40.4222, -3.7095), (40.4201, -3.7058)),
+    ("GRAN VÍA", (40.4213, -3.7076), (40.4201, -3.7046)),
     ("CALLE DE ALCALÁ", (40.4180, -3.6995), (40.4192, -3.6945)),
     ("PASEO DEL PRADO", (40.4122, -3.6922), (40.4085, -3.6918)),
     ("CALLE MAYOR", (40.4160, -3.7112), (40.4157, -3.7142)),
@@ -137,6 +139,11 @@ def main(out):
     label_font = ImageFont.truetype(LETTERING, int(2.8 * MM))
     for name, start, end in STREETS:
         street_label(img, name, xy(*start), xy(*end), label_font)
+    # the hotel: a metro-blue square with an H, so it never reads as one of the numbered spots
+    x, y = xy(*HOTEL)
+    d.rectangle([x - r + 6, y - r + 6, x + r + 6, y + r + 6], fill=INK)
+    d.rectangle([x - r, y - r, x + r, y + r], fill=METRO, outline=INK, width=6)
+    d.text((x, y + 2), "H", fill="white", font=font, anchor="mm")
     small = ImageFont.load_default(size=int(2.2 * MM))
     d.text((W - 10, H - 10), "Map data © OpenStreetMap contributors", fill=INK, font=small, anchor="rd")
     img.save(out)
