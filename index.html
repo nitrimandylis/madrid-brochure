@@ -259,6 +259,12 @@
   .roomy h3 { font-size: 14pt; }
   .roomy .checks { font-size: 15pt; }
   .roomy .checks li { margin-bottom: 7mm; }
+  /* Go see pages hold five cards each */
+  .roomy.five .small { font-size: 10pt; margin: 0.6mm 0 0; }
+  .roomy.five h3 { font-size: 12.5pt; margin: 0; }
+  .five .panel { padding: 2mm 3mm; }
+  .five .card { grid-template-columns: 30mm 1fr; gap: 3mm; }
+  .five .card .photo img { height: 22mm; }
 
   /* ---------- Checklist ---------- */
   .checks { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 4mm; }
@@ -366,20 +372,23 @@
 <!-- PAGE 5: MAP -->
 <section class="page">
   <h2 class="title">Where everything is</h2>
-  <div class="art" style="height: 140mm"><img style="object-position: bottom" src="art/map.png" alt="Map of central Madrid with the eight spots numbered"></div>
+  <div class="art" style="height: 134mm"><img style="object-position: bottom" src="art/map.png" alt="Map of central Madrid with the ten spots numbered"></div>
   <div class="panel small grid2">
     <div>
       <p>1 Puerta del Sol and Km 0</p>
       <p>2 Plaza Mayor</p>
       <p>3 Palacio Real</p>
       <p>4 Templo de Debod</p>
-      <p><b>H</b> Our hotel, Grupotel Mayorazgo</p>
+      <p>5 Gran Vía</p>
+      <p><b>P</b> Museo del Prado</p>
     </div>
     <div>
-      <p>5 Gran Vía</p>
-      <p>6 Museo del Prado</p>
-      <p>7 El Retiro</p>
-      <p>8 El Rastro, La Latina</p>
+      <p>6 El Retiro</p>
+      <p>7 Real Jardín Botánico</p>
+      <p>8 CaixaForum</p>
+      <p>9 El Rastro, La Latina</p>
+      <p>10 Bernabéu, north on L10</p>
+      <p><b>H</b> Our hotel, Grupotel Mayorazgo</p>
     </div>
   </div>
   <span class="folio">5</span>
@@ -423,7 +432,7 @@
 </section>
 
 <!-- PAGES 7-8: SIGHTSEEING -->
-<section class="page roomy">
+<section class="page roomy five">
   <h2 class="title">Go see</h2>
   <div class="panel card">
     <figure class="photo"><img src="art/photos/sol.jpg" alt="Puerta del Sol"><figcaption class="credit">Photo: Viennevi, CC BY-SA 3.0</figcaption></figure>
@@ -448,30 +457,40 @@
     <p class="small">An Egyptian temple in a park. Go at sunset, around 17:50: it's the best free view in Madrid. Closed inside on Mondays.</p>
     <p class="small skip">Skip if: you're going in daylight. It's the sunset that makes it.</p></div>
   </div>
-  <span class="folio">7</span>
-</section>
-
-<section class="page roomy left">
-  <h2 class="title">Go see, part 2</h2>
   <div class="panel card">
     <figure class="photo"><img src="art/photos/granvia.jpg" alt="The Metrópolis building on Gran Vía"><figcaption class="credit">Photo: Diego Delso, CC BY-SA 4.0</figcaption></figure>
     <div><h3>5. <a href="https://www.google.com/maps/search/?api=1&query=Gran+Via+Madrid">Gran Vía</a> <span class="metro">Gran Vía L1 L5</span></h3>
     <p class="small">Madrid's main street: theatres, shops and early-1900s buildings. Look up at the Metrópolis dome.</p></div>
   </div>
+  <span class="folio">7</span>
+</section>
+
+<section class="page roomy five left">
+  <h2 class="title">Go see, part 2</h2>
   <div class="panel card">
     <figure class="photo tilt-r"><img src="art/photos/retiro.jpg" alt="Palacio de Cristal in the Retiro"><figcaption class="credit">Photo: Diego Delso, CC BY-SA 4.0</figcaption></figure>
     <div><h3>6. <a href="https://www.google.com/maps/search/?api=1&query=Parque+del+Retiro+Madrid">El Retiro</a> <span class="metro">Retiro L2</span></h3>
     <p class="small">Rowing boats on the lake, the glass Palacio de Cristal, and the Fallen Angel, one of the few statues of the devil in any city.</p></div>
   </div>
   <div class="panel card">
+    <figure class="photo"><img src="art/photos/botanico.jpg" alt="A fountain in the Real Jardín Botánico"><figcaption class="credit">Photo: Diego Delso, CC BY-SA 4.0</figcaption></figure>
+    <div><h3>7. <a href="https://www.google.com/maps/search/?api=1&query=Real+Jardin+Botanico+Madrid">Real Jardín Botánico</a> <span class="metro">Estación del Arte L1</span></h3>
+    <p class="small">Right next to the Prado: greenhouses, terraces and quiet paths. Founded in 1755 and moved here by Charles III, the king who also built the Prado's building. Open 10:00 to 18:00 in November.</p></div>
+  </div>
+  <div class="panel card">
+    <figure class="photo tilt-r"><img src="art/photos/caixa.jpg" alt="CaixaForum and its vertical garden"><figcaption class="credit">Photo: Javier Martín, public domain</figcaption></figure>
+    <div><h3>8. <a href="https://www.google.com/maps/search/?api=1&query=CaixaForum+Madrid">CaixaForum</a> <span class="metro">Estación del Arte L1</span></h3>
+    <p class="small">An old power station that seems to float: the architects cut away its ground floor. Next to it is a whole wall of living plants by Patrick Blanc. Art shows inside, open 10:00 to 20:00.</p></div>
+  </div>
+  <div class="panel card">
     <figure class="photo"><img src="art/photos/rastro.jpg" alt="El Rastro"><figcaption class="credit">Photo: Pablo Alberto Salguero Quiles, CC BY-SA 3.0</figcaption></figure>
-    <div><h3>7. <a href="https://www.google.com/maps/search/?api=1&query=El+Rastro+Madrid">El Rastro</a> <span class="metro">La Latina L5</span></h3>
+    <div><h3>9. <a href="https://www.google.com/maps/search/?api=1&query=El+Rastro+Madrid">El Rastro</a> <span class="metro">La Latina L5</span></h3>
     <p class="small">A huge street flea market, Sunday mornings only. Sunday 29 November is the morning we fly home, so only if the programme allows. Vintage clothes, vinyl, old comics.</p>
     <p class="small skip">Skip if: you'd rather sleep in. It runs 09:00 to 15:00.</p></div>
   </div>
   <div class="panel card">
     <figure class="photo tilt-r"><img src="art/photos/bernabeu.jpg" alt="Santiago Bernabéu stadium"><figcaption class="credit">Photo: MottaW, CC BY 4.0</figcaption></figure>
-    <div><h3>8. <a href="https://www.google.com/maps/search/?api=1&query=Estadio+Santiago+Bernabeu">Santiago Bernabéu</a> <span class="metro">Santiago Bernabéu L10</span></h3>
+    <div><h3>10. <a href="https://www.google.com/maps/search/?api=1&query=Estadio+Santiago+Bernabeu">Santiago Bernabéu</a> <span class="metro">Santiago Bernabéu L10</span></h3>
     <p class="small">Real Madrid's stadium, rebuilt with a retractable roof. The tour takes you to the dressing room and the pitch side. Tickets from €37 online, €40 at the door.</p></div>
   </div>
   <span class="folio">8</span>
@@ -498,6 +517,10 @@
       <p class="small"><a href="https://www.google.com/maps/search/?api=1&query=Mercado+de+San+Miguel+Madrid">San Miguel</a> is beautiful and expensive. <a href="https://www.google.com/maps/search/?api=1&query=Mercado+de+San+Anton+Madrid">San Antón</a> in Chueca is cheaper and more local.</p>
     </div>
   </div>
+  <div class="panel">
+    <h3>Jamón</h3>
+    <p class="small">Cured ham, hanging from the ceiling of half the bars. <i>Serrano</i> is the everyday one. <i>Ibérico de bellota</i>, from acorn-fed black pigs, is the best and priciest. Cheapest way in: a <i>bocadillo de jamón</i> at <a href="https://www.google.com/maps/search/?api=1&query=Museo+del+Jamon+Madrid">Museo del Jamón</a>.</p>
+  </div>
   <div class="panel dots-red">
     <h3><a href="https://www.google.com/maps/search/?api=1&query=Chocolateria+San+Gines+Madrid">Chocolatería San Ginés</a>, since 1894</h3>
     <p class="small">Churros dipped in chocolate so thick the spoon stands up. Open all day and very late. Order <i>chocolate con churros</i> or the thicker <i>porras</i>.</p>
@@ -513,7 +536,7 @@
     </div>
   </div>
   <div class="bubble small">
-    <p><b>Meal times will catch you out.</b> Lunch is about 13:30 to 15:30 and dinner starts around 21:00. A restaurant that's empty at 19:30 isn't bad, it's just early.</p>
+    <p><b>Meal times will catch you out.</b> Lunch is about 13:30 to 15:30 and dinner starts around 21:00. Empty at 19:30 isn't bad, just early.</p>
   </div>
   <span class="folio">9</span>
 </section>

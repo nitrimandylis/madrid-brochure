@@ -88,5 +88,17 @@
   "page": "https://commons.wikimedia.org/wiki/File:Telef%C3%B3nica_-_Gran_V%C3%ADa_28_-_Madrid.jpg",
   "licence": "CC BY 2.0",
   "artist": "Manuel M. Vicente from Spain"
+ },
+ "caixa": {
+  "title": "CaixaForumMadridyJardinVertical.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:CaixaForumMadridyJardinVertical.jpg",
+  "licence": "Public domain",
+  "artist": "Javier martin"
+ },
+ "botanico": {
+  "title": "Real Jardín Botánico, Madrid, España, 2017-05-18, DD 38.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Real_Jard%C3%ADn_Bot%C3%A1nico,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_38.jpg",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Diego Delso"
  }
 }

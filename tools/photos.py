@@ -40,6 +40,8 @@ SLOTS = {
     "granvia": ("Edificio Metrópolis, calle de Alcalá, Madrid, España, 2017-05-18, DD 08.jpg", *THUMB, (0, 0, 1, 1)),
     "retiro": ("Palacio de Cristal, Parque del Retiro, Madrid, España, 2017-05-18, DD 21.jpg", *THUMB, (0, 0, 1, 1)),
     "rastro": ("Rastro de Madrid (España) 1.jpg", *THUMB, (0, 0, 1, 1)),
+    "caixa": ("CaixaForumMadridyJardinVertical.jpg", *THUMB, (0, 0, 1, 1)),
+    "botanico": ("Real Jardín Botánico, Madrid, España, 2017-05-18, DD 38.jpg", *THUMB, (0, 0, 1, 1)),
     "bernabeu": ("M-estadio-santiago-bernabeu-diciembre-2024-a.jpg", *THUMB, (0, 0, 1, 1)),
     # Toledo, page 10
     "toledo": ("Vista de Toledo desde el mirador del Valle 02.jpg", 134, 52, (0, 0, 1, 1)),

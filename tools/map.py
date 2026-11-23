@@ -28,17 +28,20 @@ SPOTS = {
     3: (40.4180, -3.7143),  # Palacio Real
     4: (40.4240, -3.7177),  # Templo de Debod
     5: (40.4203, -3.7020),  # Gran Vía
-    6: (40.4138, -3.6921),  # Prado
-    7: (40.4153, -3.6845),  # Retiro lake
-    8: (40.4087, -3.7076),  # El Rastro
+    "P": (40.4138, -3.6921),  # Prado
+    6: (40.4153, -3.6845),  # Retiro lake
+    7: (40.4100, -3.6893),  # Real Jardín Botánico
+    8: (40.4110, -3.6935),  # CaixaForum
+    9: (40.4087, -3.7076),  # El Rastro
 }
+BERNABEU_LON = -3.6883  # the stadium is ~2.4 km north of the map's top edge
 HOTEL = (40.4220, -3.7097)  # Grupotel Mayorazgo, Calle de la Flor Baja 3 (OSM node 11603023656)
 
 # street names, written along the street: (name, start lat/lon, end lat/lon)
 STREETS = [
     ("GRAN VÍA", (40.4213, -3.7076), (40.4201, -3.7046)),
-    ("CALLE DE ALCALÁ", (40.4180, -3.6995), (40.4192, -3.6945)),
-    ("PASEO DEL PRADO", (40.4122, -3.6922), (40.4085, -3.6918)),
+    ("CALLE DE ALCALÁ", (40.4175, -3.7012), (40.4186, -3.6967)),
+    ("PASEO DEL PRADO", (40.4188, -3.6933), (40.4152, -3.6926)),
     ("CALLE MAYOR", (40.4160, -3.7112), (40.4157, -3.7142)),
     ("RÍO MANZANARES", (40.4026, -3.7212), (40.4012, -3.7140)),
 ]
@@ -128,7 +131,7 @@ def main(out):
         d.line(pts, fill=INK, width=size + 6, joint="curve")
     for pts, size in roads:
         d.line(pts, fill="white", width=size, joint="curve")
-    # numbered spots, matching pages 7 and 8
+    # numbered spots, matching pages 7 and 8 (P is the Prado, page 6)
     font = ImageFont.truetype(BOWLBY, int(4.2 * MM))
     r = int(3.6 * MM)
     for n, (lat, lon) in SPOTS.items():
@@ -136,6 +139,13 @@ def main(out):
         d.ellipse([x - r + 6, y - r + 6, x + r + 6, y + r + 6], fill=INK)
         d.ellipse([x - r, y - r, x + r, y + r], fill=CRIMSON, outline=INK, width=6)
         d.text((x, y + 2), str(n), fill="white", font=font, anchor="mm")
+    # spot 10, the Bernabéu, is off the map: a pin on the top edge with an arrow pointing north
+    x, y = xy(0, BERNABEU_LON)[0], int(19 * MM)
+    d.polygon([(x - r, y - r - 4), (x + r, y - r - 4), (x, y - r - int(4 * MM))], fill=INK)
+    d.ellipse([x - r + 6, y - r + 6, x + r + 6, y + r + 6], fill=INK)
+    d.ellipse([x - r, y - r, x + r, y + r], fill=CRIMSON, outline=INK, width=6)
+    small_num = ImageFont.truetype(BOWLBY, int(3.2 * MM))
+    d.text((x, y + 2), "10", fill="white", font=small_num, anchor="mm")
     label_font = ImageFont.truetype(LETTERING, int(2.8 * MM))
     for name, start, end in STREETS:
         street_label(img, name, xy(*start), xy(*end), label_font)

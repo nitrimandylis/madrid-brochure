@@ -44,6 +44,12 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 - Gran Vía, Metrópolis building: https://www.esmadrid.com/en/tourist-information/la-gran-via
 - Retiro and the Fallen Angel (Bellver, 1885): https://en.wikipedia.org/wiki/Fuente_del_%C3%81ngel_Ca%C3%ADdo
 - El Rastro, Sundays 9:00-15:00: https://www.esmadrid.com/en/shopping/el-rastro
+- Real Jardín Botánico, founded 1755 by Ferdinand VI, moved to the Paseo del Prado by Charles III, opened there 1781, entrance next to the Prado: https://en.wikipedia.org/wiki/Real_Jard%C3%ADn_Bot%C3%A1nico_de_Madrid
+- Botánico open 10:00 to 18:00 in November (CHECK on rjb.csic.es, sources disagree, one says 17:30): https://www.esmadrid.com/informacion-turistica/real-jardin-botanico
+- Prado building commissioned by Charles III (Villanueva): https://en.wikipedia.org/wiki/Museo_del_Prado
+- CaixaForum: former Central del Mediodía power station, Herzog & de Meuron, opened 2008, vertical garden by Patrick Blanc: https://en.wikipedia.org/wiki/CaixaForum_Madrid
+- CaixaForum floating effect from removing the ground floor: https://es.wikipedia.org/wiki/CaixaForum_Madrid
+- CaixaForum open daily 10:00 to 20:00 (checked 23 Nov 2026): https://www.timeout.es/madrid/es/arte/caixaforum
 - Bernabéu tour, general public from €37 online, €40 at the ticket office (checked 22 Oct 2026): https://www.realmadrid.com/es-ES/tour-bernabeu
 - Plaza Mayor Christmas market: runs late November to 31 December, 2026 dates not announced, so the brochure only says "every Christmas": https://www.articulo14.es/espana-por-la-igualdad/comunidad-de-madrid/mercado-de-navidad-en-la-plaza-mayor-de-madrid-fechas-y-horarios-20241127.html
 
@@ -53,6 +59,8 @@ LEGEND = a story, told as one in the brochure. CHECK = sources disagree, confirm
 - Cocido in three rounds: https://www.theculturetrip.com/europe/spain/articles/cocido-madrileno-the-stew-that-has-sustained-madrid-for-six-hundred-years
 - Markets: https://doeatbetterexperience.com/es/blog/mercado-san-miguel-y-mas-alla-mercados-madrid/
 - Meal times: https://www.hosteltur.com/madrid-responde/en/times-lunch-dinner-madrid
+- Jamón serrano (white pigs) vs ibérico (black Iberian pigs), bellota = acorn-fed, top grade: https://en.wikipedia.org/wiki/Jam%C3%B3n_ib%C3%A9rico
+- Museo del Jamón, Madrid bar chain known for cheap ham bocadillos: https://www.esmadrid.com/en/restaurants/museo-del-jamon
 - San Ginés, 1894; open late, 24h Thu-Sun per Time Out (sources disagree, hence "open all day and very late"): https://www.timeout.es/madrid/es/bares-y-pubs/chocolateria-san-gines
 - La Violeta, 1915: https://www.esmadrid.com/node/70203
 
